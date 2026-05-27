@@ -2,25 +2,25 @@ from playwright.sync_api import sync_playwright
 import csv
 import re
 
-# 输入和输出文件
+# Input and output files
 INPUT_URLS_FILE = "urls.csv"
 OUTPUT_CSV_FILE = "Output.csv"
 
 def clean_name(text: str) -> str:
-    """清理参数名，去掉末尾的 * 和空格"""
+    """Clean parameter name by removing trailing * and spaces"""
     return re.sub(r"\s*\*$", "", text.strip())
 
 def extract_algorithm_data(page, url):
     page.goto(url)
     page.wait_for_load_state("networkidle", timeout=10000)
 
-    # 算法名称
+    # Algorithm name
     try:
         algo_name = page.locator("h1.topictitle1").inner_text().strip()
     except:
         algo_name = "Unknown"
 
-    # 算法描述
+    # Algorithm description
     try:
         desc_block = ""
         if page.locator("div[id$='_Description']").count() > 0:
@@ -37,7 +37,7 @@ def extract_algorithm_data(page, url):
     row_data = [algo_name, description]
     outputs_info = []
 
-    # ------- 先尝试 Parameters -------
+    # ------- Try Parameters first -------
     param_rows = page.locator("table.parameters tr:has(td)")
     if param_rows.count() > 0:
         for i in range(param_rows.count()):
@@ -49,12 +49,12 @@ def extract_algorithm_data(page, url):
             raw_name = tds.nth(0).inner_text().strip()
             name = clean_name(raw_name)
             if not re.search(r"output", name, re.IGNORECASE):
-                continue  # 只要含 output/Output 的参数
+                continue  # Only parameters containing output/Output
 
             ptype = tds.nth(1).inner_text().strip()
             detail_text = ""
 
-            # 尝试获取 detail
+            # Try to get detail
             anchor_el = tds.nth(0).locator("a")
             anchor = anchor_el.get_attribute("href") if anchor_el.count() > 0 else None
             if anchor and anchor.startswith("#"):
@@ -87,7 +87,7 @@ def extract_algorithm_data(page, url):
 
             outputs_info.extend([name, ptype, detail_text])
 
-    # ------- 如果没有 Parameters，就尝试 Ports -------
+    # ------- If no Parameters, try Ports -------
     if not outputs_info:
         port_rows = page.locator("div.section[id*='__sec_ports'] + div.tablenoborder table tbody tr.row")
         for i in range(port_rows.count()):
@@ -95,7 +95,7 @@ def extract_algorithm_data(page, url):
             try:
                 name = row.locator("td").nth(1).inner_text().strip()
                 if not re.search(r"output", name, re.IGNORECASE):
-                    continue  # 只要含 output/Output
+                    continue  # Only output/Output
 
                 port_type = row.locator("td").nth(3).inner_text().strip()
                 port_detail_id = row.locator("td").nth(1).locator("a").get_attribute("href").replace("#", "")
@@ -104,7 +104,7 @@ def extract_algorithm_data(page, url):
             except:
                 continue
 
-    # ------- 如果啥都没有，就补占位 -------
+    # ------- If nothing is found, use placeholders -------
     if not outputs_info:
         outputs_info = ["#", "#", "#"]
 
@@ -113,17 +113,17 @@ def extract_algorithm_data(page, url):
 
 def main():
     with sync_playwright() as p:
-        # 读取所有 URL
+        # Read all URLs
         with open(INPUT_URLS_FILE, "r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             urls = [row["url"] for row in reader]
 
-        # 写入结果
+        # Write results
         with open(OUTPUT_CSV_FILE, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
 
             for url in urls:
-                print(f"正在处理: {url}")
+                print(f"Processing: {url}")
                 browser = None
                 try:
                     browser = p.chromium.launch(headless=False)
@@ -135,7 +135,7 @@ def main():
                     row_data = extract_algorithm_data(page, url)
                     writer.writerow(row_data)
 
-                    #print(f"✅ 成功: {row_data[0]}, 数据列数: {len(row_data)}")
+                    #print(f"✅ Success: {row_data[0]}, columns: {len(row_data)}")
 
                 except Exception as e:
                     print(f"❌ Failure: {url} | Error: {str(e)}")

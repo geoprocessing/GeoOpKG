@@ -1,0 +1,763 @@
+4542,output,output parameter,Coverage,Raster
+4543,output,output parameter,Coverage,Raster
+4544,output,output parameter,Table,NonGeoData
+4545,output,output parameter,Table,NonGeoData
+4546,output,output parameter,Table,NonGeoData
+4547,output,output parameter,Coverage,Raster
+4548,output,output parameter,Coverage,Raster
+4549,output,output parameter,Coverage,Raster
+4550,output,output parameter,Coverage,Raster
+4551,output,output parameter,Coverage,Raster
+4552,output,,FeatureCollection,Vector
+4553,output,output coverage image,Coverage,Raster
+4554,result,JSON array string for prefecture level administrative divisions within the province,String,LiteralData
+4555,result,JSON string for prefecture level carbon accounting,String,LiteralData
+4556,result,JSON string for prefecture level socio-economic indicators,String,LiteralData
+4557,result,Carbon accounting allocation ratio JSON string,String,LiteralData
+4558,result,JSON string for provincial carbon emission statistics,String,LiteralData
+4559,result,JSON string for provincial socio-economic indicators,String,LiteralData
+4560,output,output parameter,Image<unknown bands>,Raster
+4561,output,output parameter,String,LiteralData
+4562,output,output parameter,Item,LiteralData
+4563,output,output parameter,Integer,LiteralData
+4564,Collection,Maps an algorithm over a collection.,Collection,LiteralData
+4565,output,output parameter,Collection,LiteralData
+4566,output,output parameter,CoverageCollection,Raster
+4567,output,output parameter,FeatureCollection,Vector
+4568,output,output parameter,Collection,LiteralData
+4569,output,output parameter,Cube,GeoData
+4570,output,,FeatureCollection,Vector
+4571,output,,FeatureCollection,Vector
+4572,output,output parameter,Coverage,Raster
+4573,Coverage,"Performs accuracy evaluation, calculating classification accuracy for raster images.",Coverage,Raster
+4574,output,output parameter,Coverage,Raster
+4575,output,output parameter,Coverage,Raster
+4576,output,output parameter,Coverage,Raster
+4577,output,output parameter,Coverage,Raster
+4578,output,output parameter,Coverage,Raster
+4579,output,output parameter,Coverage,Raster
+4580,Coverage,Performs artificial neural network classification algorithm for raster data.,Coverage,Raster
+4581,output,output parameter,Double,LiteralData
+4582,output,output parameter,Coverage,Raster
+4583,output,output parameter,Coverage,Raster
+4584,output,output parameter,Coverage,Raster
+4585,output,output parameter,Coverage,Raster
+4586,output,output parameter,Feature,Vector
+4587,output,output parameter,Coverage,Raster
+4588,output,output parameter,Coverage,Raster
+4589,output,output parameter,Coverage,Raster
+4590,Coverage,Atmospheric correction - Performs atmospheric correction on the input imagery using specified atmospheric conditions and outputs the corrected result.,Coverage,Raster
+4591,output,output parameter,String,LiteralData
+4592,output,output parameter,Integer,LiteralData
+4593,output,output parameter,String,LiteralData
+4594,Coverage,Integration of the OpenCV Machine Learning library for Normal Bayes classification of gridded features.,Coverage,Raster
+4595,output,output parameter,Coverage,Raster
+4596,output,output parameter,Coverage,Raster
+4597,output,output parameter,String,LiteralData
+4598,output,output parameter,Coverage,Raster
+4599,output,output parameter,Coverage,Raster
+4600,output,output parameter,Coverage,Raster
+4601,output,output parameter,Coverage,Raster
+4602,output,output parameter,Coverage,Raster
+4603,output,output parameter,Coverage,Raster
+4604,output,output parameter,Coverage,Raster
+4605,output,output parameter,Coverage,Raster
+4606,output,output parameter,Coverage,Raster
+4607,output,output parameter,Coverage,Raster
+4608,output,output parameter,Coverage,Raster
+4609,output,output parameter,Coverage,Raster
+4610,output,output parameter,Coverage,Raster
+4611,output,output parameter,Coverage,Raster
+4612,output,output parameter,Coverage,Raster
+4613,output,output parameter,Coverage,Raster
+4614,output,output parameter,Coverage,Raster
+4615,output,output parameter,Coverage,Raster
+4616,output,output parameter,Coverage,Raster
+4617,output,output parameter,Coverage,Raster
+4618,output,output parameter,Coverage,Raster
+4619,output,output parameter,Coverage,Raster
+4620,output,output parameter,String,LiteralData
+4621,output,output parameter,String,LiteralData
+4622,output,output parameter,Coverage,Raster
+4623,output,output parameter,Feature,Vector
+4624,output,output parameter,Feature,Vector
+4625,output,output parameter,Coverage,Raster
+4626,output,output parameter,Coverage,Raster
+4627,output,output parameter,Coverage,Raster
+4628,output,output parameter,Coverage,Raster
+4629,output,output parameter,String,LiteralData
+4630,output,output parameter,MLmodel,ComplexData
+4631,output,output parameter,MLmodel,ComplexData
+4632,Coverage,Integration of the OpenCV Machine Learning library for Decision Tree classification of gridded features.,Coverage,Raster
+4633,output,output parameter,Coverage,Raster
+4634,output,output parameter,Coverage,Raster
+4635,output,output parameter,Coverage,Raster
+4636,output,output parameter,Coverage,Raster
+4637,output,output parameter,Coverage,Raster
+4638,output,output parameter,Dictionary,ComplexData
+4639,output,output parameter,Coverage,Raster
+4640,output,output parameter,Coverage,Raster
+4641,output,output parameter,Coverage,Raster
+4642,output,output parameter,Coverage,Raster
+4643,,,,
+4644,output,output parameter,Coverage,Raster
+4645,output,output parameter,Coverage,Raster
+4646,output,output parameter,Coverage,Raster
+4647,output,output parameter,Coverage,Raster
+4648,output,output parameter,Coverage,Raster
+4649,output,output parameter,Coverage,Raster
+4650,output,output parameter,Coverage,Raster
+4651,output,output parameter,MLmodel,ComplexData
+4652,output,output parameter,MLmodel,ComplexData
+4653,output,output parameter,Coverage,Raster
+4654,output,output parameter,Coverage,Raster
+4655,output,output parameter,Coverage,Raster
+4656,output,output parameter,Coverage,Raster
+4657,output,output parameter,Coverage,Raster
+4658,output,output parameter,Coverage,Raster
+4659,output,output parameter,Coverage,Raster
+4660,output,output parameter,MLmodel,ComplexData
+4661,output,output parameter,MLmodel,ComplexData
+4662,output,output parameter,MLmodel,ComplexData
+4663,output,output parameter,String,LiteralData
+4664,output,output parameter,Coverage,Raster
+4665,output,output parameter,String,LiteralData
+4666,output,output parameter,Coverage,Raster
+4667,output,output parameter,Coverage,Raster
+4668,output,output parameter,Coverage,Raster
+4669,output,output parameter,Coverage,Raster
+4670,output,output parameter,Coverage,Raster
+4671,output,output parameter,Coverage,Raster
+4672,output,output parameter,Coverage,Raster
+4673,output,output parameter,Coverage,Raster
+4674,output,output parameter,Coverage,Raster
+4675,output,output parameter,Coverage,Raster
+4676,output,output parameter,String,LiteralData
+4677,output,output parameter,Coverage,Raster
+4678,output,output parameter,Coverage,Raster
+4679,output,output parameter,Coverage,Raster
+4680,output,output parameter,Coverage,Raster
+4681,output,output parameter,Coverage,Raster
+4682,output,output parameter,Coverage,Raster
+4683,output,output parameter,"Map[Int,Long]",ComplexData
+4684,output,output parameter,"Map[Int,Long]",ComplexData
+4685,output,output parameter,Coverage,Raster
+4686,output,output parameter,Coverage,Raster
+4687,output,output parameter,Coverage,Raster
+4688,output,output parameter,Coverage,Raster
+4689,Coverage,"Implements multiple image fusion methods, including Brovey, IHS, and PCA fusion.",Coverage,Raster
+4690,output,output parameter,Coverage,Raster
+4691,output,output parameter,Coverage,Raster
+4692,output,output parameter,Coverage,Raster
+4693,Coverage,This tool executes the Isodata unsupervised classification - clustering algorithm. Isodata stands for Iterative Self-Organizing Data Analysis Techniques. This is a more sophisticated algorithm which allows the number of clusters to be automatically adjusted during the iteration by merging similar clusters and splitting clusters with large standard deviations. The tool is based on Christos Iosifidis' Isodata implementation.,Coverage,Raster
+4694,output,output parameter,Coverage,Raster
+4695,output,output parameter,MLmodel,ComplexData
+4696,output,output parameter,Coverage,Raster
+4697,output,output parameter,Coverage,Raster
+4698,output,output parameter,Coverage,Raster
+4699,output,output parameter,Feature,Vector
+4700,output,output parameter,Coverage,Raster
+4701,output,output parameter,Coverage,Raster
+4702,output,output parameter,MLmodel,ComplexData
+4703,output,output parameter,MLmodel,ComplexData
+4704,output,output parameter,Coverage,Raster
+4705,Coverage,,Coverage,Raster
+4706,output,output parameter,Coverage,Raster
+4707,output,output parameter,Coverage,Raster
+4708,output,output parameter,Coverage,Raster
+4709,output,output parameter,MLmodel,ComplexData
+4710,output,output parameter,Coverage,Raster
+4711,output,output parameter,Coverage,Raster
+4712,output,output parameter,Coverage,Raster
+4713,output,output parameter,Coverage,Raster
+4714,output,output parameter,Coverage,Raster
+4715,output,output parameter,Coverage,Raster
+4716,output,output parameter,CoverageCollection,Raster
+4717,output,output parameter,String,LiteralData
+4718,output,output parameter,Coverage,Raster
+4719,output,output parameter,Coverage,Raster
+4720,output,output parameter,Coverage,Raster
+4721,output,output parameter,Coverage,Raster
+4722,output,output parameter,Coverage,Raster
+4723,output,output parameter,Coverage,Raster
+4724,output,output parameter,Coverage,Raster
+4725,output,output parameter,String,LiteralData
+4726,output,output parameter,String,LiteralData
+4727,output,output parameter,MLmodel,ComplexData
+4728,output,output parameter,Coverage,Raster
+4729,output,output parameter,Coverage,Raster
+4730,output,output parameter,Coverage,Raster
+4731,output,output parameter,MLmodel,ComplexData
+4732,output,output parameter,Coverage,Raster
+4733,output,output parameter,Coverage,Raster
+4734,output,output parameter,Coverage,Raster
+4735,output,output parameter,Coverage,Raster
+4736,output,output parameter,Coverage,Raster
+4737,output,output parameter,Coverage,Raster
+4738,output,output parameter,void,LiteralData
+4739,output,output parameter,MLmodel,ComplexData
+4740,output,output parameter,Coverage,Raster
+4741,output,output parameter,Coverage,Raster
+4742,output,output parameter,Coverage,Raster
+4743,String, Reports statistics for raster maps. ,String,LiteralData
+4744,output,output parameter,Coverage,Raster
+4745,output,output parameter,String,LiteralData
+4746,output,output parameter,Coverage,Raster
+4747,output,output parameter,String,LiteralData
+4748,Coverage, Exports a raster map as GRASS GIS specific archive file ,Coverage,Raster
+4749,output,output parameter,Coverage,Raster
+4750,output,output parameter,Coverage,Raster
+4751,output,output parameter,Coverage,Raster
+4752,output,output parameter,Feature,Vector
+4753,output,output parameter,Coverage,Raster
+4754,output,output parameter,Coverage,Raster
+4755,output,output parameter,Coverage,Raster
+4756,output,output parameter,String,LiteralData
+4757,output,output parameter,Coverage,Raster
+4758,output,output parameter,Coverage,Raster
+4759,output,output parameter,Coverage,Raster
+4760,Coverage,Implementation of the Random Forest classification algorithm for raster data.,Coverage,Raster
+4761,output,output parameter,MLmodel,ComplexData
+4762,output,output parameter,MLmodel,ComplexData
+4763,output,output parameter,Coverage,Raster
+4764,output,output parameter,Coverage,Raster
+4765,output,output parameter,Dictionary,ComplexData
+4766,output,output parameter,Dictionary,ComplexData
+4767,output,output parameter,String,LiteralData
+4768,output,output parameter,Coverage,Raster
+4769,output,output parameter,Coverage,Raster
+4770,output,output parameter,Coverage,Raster
+4771,output,output parameter,Coverage,Raster
+4772,output,output parameter,Double,LiteralData
+4773,output,output parameter,Coverage,Raster
+4774,output,output parameter,Coverage,Raster
+4775,output,output parameter,String,LiteralData
+4776,output,output parameter,Coverage,Raster
+4777,output,output parameter,Coverage,Raster
+4778,output,output parameter,Coverage,Raster
+4779,output,output parameter,String,LiteralData
+4780,output,output parameter,Coverage,Raster
+4781,output,output parameter,Coverage,Raster
+4782,output,output parameter,Coverage,Raster
+4783,output,output parameter,Coverage,Raster
+4784,output,output parameter,Coverage,Raster
+4785,output,output parameter,Coverage,Raster
+4786,output,output parameter,Coverage,Raster
+4787,output,output parameter,Coverage,Raster
+4788,output,output parameter,Coverage,Raster
+4789,output,output parameter,Coverage,Raster
+4790,output,output parameter,Coverage,Raster
+4791,output,output parameter,Coverage,Raster
+4792,output,output parameter,Coverage,Raster
+4793,output,output parameter,Coverage,Raster
+4794,output,output parameter,Coverage,Raster
+4795,output,output parameter,Feature,Vector
+4796,output,output parameter,Feature,Vector
+4797,output,output parameter,Coverage,Raster
+4798,output,output parameter,Coverage,Raster
+4799,output,output parameter,Feature,Vector
+4800,output,output parameter,Coverage,Raster
+4801,output,output parameter,Feature,Vector
+4802,output,output parameter,Coverage,Raster
+4803,output,output parameter,Feature,Vector
+4804,output,output parameter,Coverage,Raster
+4805,output,output parameter,Coverage,Raster
+4806,output,output parameter,Coverage,Raster
+4807,output,output parameter,Coverage,Raster
+4808,output,output parameter,Coverage,Raster
+4809,output,output parameter,Coverage,Raster
+4810,output,output parameter,Coverage,Raster
+4811,output,output parameter,Coverage,Raster
+4812,output,output parameter,Coverage,Raster
+4813,output,output parameter,Coverage,Raster
+4814,output,output parameter,Coverage,Raster
+4815,output,output parameter,Coverage,Raster
+4816,output,output parameter,Coverage,Raster
+4817,output,output parameter,Coverage,Raster
+4818,output,output parameter,Coverage,Raster
+4819,Coverage,"Performs spatial connectivity analysis, calculating neighborhood connections in a raster image.",Coverage,Raster
+4820,Coverage,Performs spatial filtering operations for smoothing or edge detection on raster images.,Coverage,Raster
+4821,output,output parameter,Coverage,Raster
+4822,output,output parameter,Coverage,Raster
+4823,output,output parameter,Map,ComplexData
+4824,output,output parameter,Coverage,Raster
+4825,output,output parameter,String,LiteralData
+4826,output,output parameter,Coverage,Raster
+4827,output,output parameter,Coverage,Raster
+4828,output,output parameter,Coverage,Raster
+4829,output,output parameter,String,LiteralData
+4830,output,output parameter,Coverage,Raster
+4831,output,output parameter,String,LiteralData
+4832,output,output parameter,Coverage,Raster
+4833,Coverage,Performs support vector machine classification algorithm for raster data.,Coverage,Raster
+4834,output,output parameter,Coverage,Raster
+4835,output,output parameter,Coverage,Raster
+4836,output,output parameter,Coverage,Raster
+4837,output,output parameter,Coverage,Raster
+4838,output,output parameter,Feature,Vector
+4839,output,output parameter,Coverage,Raster
+4840,output,output parameter,Feature,Vector
+4841,output,output parameter,Coverage,Raster
+4842,output,output parameter,Coverage,Raster
+4843,output,output parameter,Coverage,Raster
+4844,output,output parameter,Coverage,Raster
+4845,output,output parameter,Coverage,Raster
+4846,output,output parameter,Coverage,Raster
+4847,output,output parameter,Coverage,Raster
+4848,output,output parameter,Coverage,Raster
+4849,output,output parameter,Coverage,Raster
+4850,output,output parameter,Coverage,Raster
+4851,output,output parameter,Coverage,Raster
+4852,output,output parameter,Coverage,Raster
+4853,output,output parameter,Coverage,Raster
+4854,output,output parameter,Feature,Vector
+4855,output,output parameter,Coverage,Raster
+4856,output,output parameter,Coverage,Raster
+4857,output,output parameter,Coverage,Raster
+4858,output,output parameter,Coverage,Raster
+4859,output,output parameter,Coverage,Raster
+4860,output,output parameter,Coverage,Raster
+4861,output,output parameter,Coverage,Raster
+4862,output,output parameter,Coverage,Raster
+4863,output,output parameter,Coverage,Raster
+4864,output,output parameter,Coverage,Raster
+4865,output,output parameter,String,LiteralData
+4866,output,output parameter,String,LiteralData
+4867,output,output parameter,String,LiteralData
+4868,output,output parameter,String,LiteralData
+4869,output,output parameter,String,LiteralData
+4870,output,output parameter,Coverage,Raster
+4871,output,output parameter,Coverage,Raster
+4872,output,output parameter,Coverage,Raster
+4873,output,output parameter,Coverage,Raster
+4874,output,output parameter,Coverage,Raster
+4875,output,output parameter,Coverage,Raster
+4876,Coverage,,Coverage,Raster
+4877,output,output parameter,String,LiteralData
+4878,output,output parameter,Coverage,Raster
+4879,output,output parameter,Coverage,Raster
+4880,output,output parameter,CoverageArray,Raster
+4881,output,output parameter,CoverageArray,Raster
+4882,output,output parameter,CoverageArray,Raster
+4883,output,output parameter,CoverageArray,Raster
+4884,output,output parameter,CoverageArray,Raster
+4885,output,output parameter,CoverageArray,Raster
+4886,output,output parameter,CoverageArray,Raster
+4887,output,output parameter,CoverageArray,Raster
+4888,output,output parameter,CoverageArray,Raster
+4889,output,output parameter,CoverageArray,Raster
+4890,output,output parameter,CoverageArray,Raster
+4891,output,output parameter,CoverageArray,Raster
+4892,output,output parameter,CoverageArray,Raster
+4893,output,output parameter,CoverageArray,Raster
+4894,output,output parameter,CoverageArray,Raster
+4895,output,output parameter,CoverageArray,Raster
+4896,output,output parameter,CoverageArray,Raster
+4897,output,output parameter,CoverageArray,Raster
+4898,output,output parameter,CoverageCollection,Raster
+4899,output,output parameter,Coverage,Raster
+4900,output,output parameter,Coverage,Raster
+4901,CoverageCollection,,CoverageCollection,Raster
+4902,output,output parameter,CoverageCollection,Raster
+4903,output,output parameter,Coverage,Raster
+4904,output,output parameter,CoverageCollection,Raster
+4905,output,output parameter,CoverageCollection,Raster
+4906,output,output parameter,Coverage,Raster
+4907,output,output parameter,Coverage,Raster
+4908,output,output parameter,Coverage,Raster
+4909,output,output parameter,CoverageCollection,Raster
+4910,output,output parameter,Coverage,Raster
+4911,output,output parameter,Coverage,Raster
+4912,output,output parameter,CoverageCollection,Raster
+4913,output,output parameter,String,LiteralData
+4914,output,output parameter,Coverage,Raster
+4915,output,output parameter,Integer,LiteralData
+4916,output,output parameter,Coverage,Raster
+4917,output,output parameter,Collection,LiteralData
+4918,output,output parameter,Coverage,Raster
+4919,output,output parameter,Coverage,Raster
+4920,output,output parameter,Coverage,Raster
+4921,output,output parameter,CoverageCollection,Raster
+4922,output,output parameter,Coverage,Raster
+4923,output,output parameter,Coverage,Raster
+4924,output,output parameter,Coverage,Raster
+4925,output,output parameter,Coverage,Raster
+4926,output,output parameter,Coverage,Raster
+4927,output,output parameter,Coverage,Raster
+4928,output,output parameter,Coverage,Raster
+4929,output,output parameter,Coverage,Raster
+4930,output,output parameter,CoverageCollection,Raster
+4931,output,output parameter,Coverage,Raster
+4932,output,output parameter,Unit,LiteralData
+4933,output,output parameter,Coverage,Raster
+4934,output,output parameter,Cube,GeoData
+4935,output,output parameter,Cube,GeoData
+4936,output,output parameter,Cube,GeoData
+4937,output,output parameter,Cube,GeoData
+4938,output,output parameter,Cube,GeoData
+4939,output,output parameter,Cube,GeoData
+4940,Cube,Cube after joint analysis,Cube,GeoData
+4941,output,output parameter,Cube,GeoData
+4942,output,output parameter,Cube,GeoData
+4943,output,output parameter,Cube,GeoData
+4944,output,output parameter,Cube,GeoData
+4945,output,output parameter,Cube,GeoData
+4946,output,output parameter,Cube,GeoData
+4947,output,output parameter,Cube,GeoData
+4948,output,output parameter,Cube,GeoData
+4949,output,output parameter,Cube,GeoData
+4950,output,output parameter,Cube,GeoData
+4951,output,output parameter,String,LiteralData
+4952,output,,FeatureCollection,Vector
+4953,output,output parameter,Feature,Vector
+4954,output,output parameter,Feature,Vector
+4955,output,output parameter,Feature,Vector
+4956,output,output parameter,Feature,Vector
+4957,output,output parameter,Feature,Vector
+4958,output,,Double,LiteralData
+4959,output,output parameter,Feature,Vector
+4960,output,output parameter,Feature,Vector
+4961,output,output parameter,Feature,Vector
+4962,output,,Feature,Vector
+4963,output,,Feature,Vector
+4964,output,output parameter,Feature,Vector
+4965,output,,Feature,Vector
+4966,output,output parameter,Feature,Vector
+4967,output,output parameter,Feature,Vector
+4968,output,,Feature,Vector
+4969,output,,Feature,Vector
+4970,output,output parameter,Feature,Vector
+4971,output,,Boolean,LiteralData
+4972,output,,Boolean,LiteralData
+4973,output,output parameter,Feature,Vector
+4974,output,output parameter,Feature,Vector
+4975,output,,Feature,Vector
+4976,output,,Feature,Vector
+4977,output,,Feature,Vector
+4978,output,output parameter,Feature,Vector
+4979,output,,Feature,Vector
+4980,output,,Feature,Vector
+4981,output,,Boolean,LiteralData
+4982,output,,Feature,Vector
+4983,output,output parameter,Feature,Vector
+4984,output,,Double,LiteralData
+4985,output,output parameter,Feature,Vector
+4986,output,,String,LiteralData
+4987,output,,Any,LiteralData
+4988,output,,Any,LiteralData
+4989,output,,Any,LiteralData
+4990,output,,String,LiteralData
+4991,output,,Feature,Vector
+4992,output,output parameter,Feature,Vector
+4993,output,,Boolean,LiteralData
+4994,output,,Double,LiteralData
+4995,output,output parameter,Feature,Vector
+4996,output,,Feature,Vector
+4997,output,,Feature,Vector
+4998,output,,Feature,Vector
+4999,output,,Feature,Vector
+5000,output,output parameter,Feature,Vector
+5001,output,output parameter,Feature,Vector
+5002,output,output parameter,Feature,Vector
+5003,output,output parameter,Feature,Vector
+5004,output,output parameter,Feature,Vector
+5005,output,output parameter,Feature,Vector
+5006,output,,Double,LiteralData
+5007,output,output parameter,Feature,Vector
+5008,output,output parameter,Feature,Vector
+5009,output,output parameter,Feature,Vector
+5010,output,output parameter,Feature,Vector
+5011,output,output parameter,Feature,Vector
+5012,output,output parameter,Feature,Vector
+5013,output,output parameter,Feature,Vector
+5014,output,output parameter,Feature,Vector
+5015,output,,List[String],ComplexData
+5016,output,output parameter,Feature,Vector
+5017,output,output parameter,Feature,Vector
+5018,output,output parameter,Feature,Vector
+5019,output,output parameter,Feature,Vector
+5020,output,output parameter,Coverage,Raster
+5021,output,output parameter,Coverage,Raster
+5022,output,output parameter,Feature,Vector
+5023,output,output parameter,Feature,Vector
+5024,output,,Feature,Vector
+5025,output,output parameter,Feature,Vector
+5026,output,,Feature,Vector
+5027,output,,Feature,Vector
+5028,output,,Feature,Vector
+5029,output,output parameter,Feature,Vector
+5030,output,,Feature,Vector
+5031,output,output parameter,Feature,Vector
+5032,output,output parameter,Feature,Vector
+5033,output,output parameter,Feature,Vector
+5034,output,output parameter,Feature,Vector
+5035,output,,Feature,Vector
+5036,output,output parameter,Feature,Vector
+5037,output,,Array[Any],ComplexData
+5038,output,,"mutable.Map[String, Any]",ComplexData
+5039,output,output parameter,Feature,Vector
+5040,output,output parameter,Feature,Vector
+5041,output,,Feature,Vector
+5042,output,output parameter,Feature,Vector
+5043,output,output parameter,Feature,Vector
+5044,output,,Boolean,LiteralData
+5045,output,output parameter,FeatureCollection,Vector
+5046,output,,FeatureCollection,Vector
+5047,output,,Int,LiteralData
+5048,output,,Int,LiteralData
+5049,output,,Any,LiteralData
+5050,output,,FeatureCollection,Vector
+5051,output,,Number,LiteralData
+5052,output,,Number,LiteralData
+5053,output,,Number,LiteralData
+5054,output,,Number,LiteralData
+5055,output,,Number,LiteralData
+5056,output,,Number,LiteralData
+5057,output,,"Map[String, Number]",ComplexData
+5058,output,,Number,LiteralData
+5059,output,,Number,LiteralData
+5060,output,,Number,LiteralData
+5061,output,,FeatureCollection,Vector
+5062,output,,FeatureCollection,Vector
+5063,output,,FeatureCollection,Vector
+5064,output,,FeatureCollection,Vector
+5065,output,,FeatureCollection,Vector
+5066,output,,FeatureCollection,Vector
+5067,output,,FeatureCollection,Vector
+5068,output,,FeatureCollection,Vector
+5069,output,,FeatureCollection,Vector
+5070,output,,null,LiteralData
+5071,output,,FeatureCollection,Vector
+5072,output,output parameter,FeatureCollection,Vector
+5073,output,,FeatureCollection,Vector
+5074,output,,FeatureCollection,Vector
+5075,output,,OGEGeometry,Vector
+5076,output,output parameter,String,LiteralData
+5077,output,output parameter,Feature,Vector
+5078,output,output parameter,Integer,LiteralData
+5079,FeatureCollection,,FeatureCollection,Vector
+5080,output,,Coverage,Raster
+5081,output,,FeatureCollection,Vector
+5082,output,,FeatureCollection,Vector
+5083,output,,FeatureCollection,Vector
+5084,output,output parameter,FeatureCollection,Vector
+5085,output,,FeatureCollection,Vector
+5086,output,,FeatureCollection,Vector
+5087,output,,List[String],ComplexData
+5088,output,,FeatureCollection,Vector
+5089,output,,FeatureCollection,Vector
+5090,output,,FeatureCollection,Vector
+5091,output,,Coverage,Raster
+5092,output,,FeatureCollection,Vector
+5093,output,,FeatureCollection,Vector
+5094,output,,FeatureCollection,Vector
+5095,output,,Coverage,Raster
+5096,output,,Long,LiteralData
+5097,output,,FeatureCollection,Vector
+5098,output,,FeatureCollection,Vector
+5099,output,,FeatureCollection,Vector
+5100,output,output parameter,FeatureCollection,Vector
+5101,output,,FeatureCollection,Vector
+5102,output,output parameter,Feature_deprecated,Vector
+5103,output,output parameter,String,LiteralData
+5104,output,output parameter,String,LiteralData
+5105,output,output parameter,Feature_deprecated,Vector
+5106,output,output parameter,Feature_deprecated,Vector
+5107,output,output parameter,Feature_deprecated,Vector
+5108,output,output parameter,Feature_deprecated,Vector
+5109,output,output parameter,String,LiteralData
+5110,output,output parameter,string,LiteralData
+5111,output,output parameter,String,LiteralData
+5112,output,output parameter,String,LiteralData
+5113,output,output parameter,Feature_deprecated,Vector
+5114,output,output parameter,String,LiteralData
+5115,output,output parameter,Feature_deprecated,Vector
+5116,output,output parameter,MLmodel,ComplexData
+5117,output,output parameter,MLmodel,ComplexData
+5118,output,output parameter,Feature_deprecated,Vector
+5119,output,output parameter,String,LiteralData
+5120,output,output parameter,Feature_deprecated,Vector
+5121,output,output parameter,String,LiteralData
+5122,output,output parameter,Feature_deprecated,Vector
+5123,output,output parameter,MLmodel,ComplexData
+5124,output,output parameter,MLmodel,ComplexData
+5125,output,output parameter,Feature_deprecated,Vector
+5126,output,output parameter,MLmodel,ComplexData
+5127,output,output parameter,MLmodel,ComplexData
+5128,output,output parameter,MLmodel,ComplexData
+5129,output,output parameter,Feature_deprecated,Vector
+5130,output,output parameter,String,LiteralData
+5131,output,output parameter,List[Array[String]],ComplexData
+5132,output,output parameter,String,LiteralData
+5133,output,output parameter,List[Double],ComplexData
+5134,output,output parameter,List[String],ComplexData
+5135,output,output parameter,String,LiteralData
+5136,output,output parameter,Feature_deprecated,Vector
+5137,output,output parameter,String,LiteralData
+5138,output,output parameter,Image<unknown bands>,Raster
+5139,output,output parameter,MLmodel,ComplexData
+5140,output,output parameter,String,LiteralData
+5141,output,output parameter,Feature_deprecated,Vector
+5142,output,output parameter,String,LiteralData
+5143,output,output parameter,MLmodel,ComplexData
+5144,output,output parameter,Feature_deprecated,Vector
+5145,output,output parameter,MLmodel,ComplexData
+5146,output,output parameter,Feature_deprecated,Vector
+5147,output,output parameter,Feature_deprecated,Vector
+5148,output,output parameter,MLmodel,ComplexData
+5149,output,output parameter,Feature_deprecated,Vector
+5150,output,output parameter,Feature_deprecated,Vector
+5151,output,output parameter,Feature_deprecated,Vector
+5152,output,output parameter,String,LiteralData
+5153,output,output parameter,String,LiteralData
+5154,output,output parameter,MLmodel,ComplexData
+5155,output,output parameter,Feature_deprecated,Vector
+5156,output,output parameter,Feature_deprecated,Vector
+5157,output,output parameter,Feature_deprecated,Vector
+5158,output,output parameter,MLmodel,ComplexData
+5159,output,output parameter,MLmodel,ComplexData
+5160,output,output parameter,Feature_deprecated,Vector
+5161,output,output parameter,Feature_deprecated,Vector
+5162,output,output parameter,String,LiteralData
+5163,output,output parameter,String,LiteralData
+5164,output,output parameter,MLmodel,ComplexData
+5165,output,output parameter,MLmodel,ComplexData
+5166,output,output parameter,String,LiteralData
+5167,output,output parameter,String,LiteralData
+5168,output,output parameter,Feature_deprecated,Vector
+5169,output,output parameter,Feature_deprecated,Vector
+5170,output,output parameter,Feature_deprecated,Vector
+5171,output,output parameter,Feature_deprecated,Vector
+5172,output,output parameter,Feature_deprecated,Vector
+5173,output,output parameter,String,LiteralData
+5174,output,output parameter,Feature_deprecated,Vector
+5175,output,output parameter,Feature_deprecated,Vector
+5176,output,output parameter,String,LiteralData
+5177,output,output parameter,Filter,ComplexData
+5178,output,output parameter,Filter,ComplexData
+5179,output,output parameter,Filter,ComplexData
+5180,output,,FeatureCollection,Vector
+5181,output,Output COG file,Coverage,Raster
+5182,output,,FeatureCollection,Vector
+5183,MATCHED,,Coverage,Raster
+5184,output,output parameter,Item,LiteralData
+5185,output,output parameter,String,LiteralData
+5186,output,output parameter,Kernel,ComplexData
+5187,output,output parameter,Kernel,ComplexData
+5188,output,output parameter,Kernel,ComplexData
+5189,output,output parameter,Kernel,ComplexData
+5190,output,output parameter,Kernel,ComplexData
+5191,output,output parameter,Kernel,ComplexData
+5192,output,output parameter,Kernel,ComplexData
+5193,output,output parameter,Kernel,ComplexData
+5194,output,output parameter,Kernel,ComplexData
+5195,output,output parameter,Kernel,ComplexData
+5196,output,output parameter,Kernel,ComplexData
+5197,output,output parameter,Kernel,ComplexData
+5198,output,output parameter,Kernel,ComplexData
+5199,output,output parameter,Kernel,ComplexData
+5200,output,output parameter,Kernel,ComplexData
+5201,output,output parameter,Kernel,ComplexData
+5202,output,output parameter,Kernel,ComplexData
+5203,Kernel,,Kernel,ComplexData
+5204,output,output parameter,Kernel,ComplexData
+5205,output,output parameter,Kernel,ComplexData
+5206,output,output parameter,Kernel,ComplexData
+5207,output,output parameter,Kernel,ComplexData
+5208,MapClient,,MapClient,ComplexData
+5209,output,,FeatureCollection,Vector
+5210,output,output parameter,MLmodel,ComplexData
+5211,Coverage,classifying method.,Coverage,Raster
+5212,Coverage,regression method.,Coverage,Raster
+5213,String,Multiclass classification evaluator method.,String,LiteralData
+5214,MLmodel,"Random Forest model for classification. It supports both binary and multiclass labels, as well as both continuous and categorical features.",MLmodel,ComplexData
+5215,MLmodel,Random Forest learning algorithm for regression. It supports both continuous and categorical features.,MLmodel,ComplexData
+5216,String,Regression evaluator method.,String,LiteralData
+5217,output,output parameter,Process,ComplexData
+5218,output,output parameter,ProcessResult,GeoData
+5219,output,output parameter,ProcessResult,GeoData
+5220,out,Output GeoJSON file.,Feature,Vector
+5221,output,,FeatureCollection,Vector
+5222,output,output parameter,Collection,LiteralData
+5223,output,output parameter,Collections,LiteralData
+5224,output,output parameter,Coverage,Raster
+5225,output,output parameter,CoverageArray,Raster
+5226,output,output parameter,Coverage,Raster
+5227,output,output parameter,CoverageCollection,Raster
+5228,output,output parameter,Cube,GeoData
+5229,output,output parameter,Feature,Vector
+5230,output,output parameter,FeatureCollection,Vector
+5231,output,output parameter,MLmodel,ComplexData
+5232,output,output parameter,Process,ComplexData
+5233,output,output parameter,Processes,ComplexData
+5234,output,output parameter,Sheet,NonGeoData
+5235,output,output parameter,Table,NonGeoData
+5236,output,output parameter,Unit,LiteralData
+5237,output,output parameter,Unit,LiteralData
+5238,output,output parameter,Unit,LiteralData
+5239,output,output parameter,Unit,LiteralData
+5240,output,output parameter,Sheet,NonGeoData
+5241,output,output parameter,String,LiteralData
+5242,output,output parameter,Sheet,NonGeoData
+5243,output,output parameter,Feature,Vector
+5244,output,output parameter,Sheet,NonGeoData
+5245,output,output parameter,Feature,Vector
+5246,output,output parameter,Coverage,Raster
+5247,output,output parameter,String,LiteralData
+5248,output,output parameter,String,LiteralData
+5249,output,output parameter,Coverage,Raster
+5250,output,output parameter,String,LiteralData
+5251,output,output parameter,String,LiteralData
+5252,output,output parameter,Feature,Vector
+5253,output,output parameter,Feature,Vector
+5254,Feature,Result of MGWR,Feature,Vector
+5255,output,output parameter,Feature,Vector
+5256,output,output parameter,Feature,Vector
+5257,output,output parameter,Feature,Vector
+5258,Feature,Result of MGWR,Feature,Vector
+5259,output,output parameter,Feature,Vector
+5260,output,output parameter,Feature,Vector
+5261,output,output parameter,Feature,Vector
+5262,output,output parameter,Feature,Vector
+5263,Feature,Result of Generalized GWR,Feature,Vector
+5264,Feature,Result of MGWR,Feature,Vector
+5265,output,output parameter,String,LiteralData
+5266,output,output parameter,String,LiteralData
+5267,output,output parameter,String,LiteralData
+5268,output,output parameter,String,LiteralData
+5269,output,output parameter,Coverage,Raster
+5270,output,output parameter,Coverage,Raster
+5271,output,output parameter,Coverage,Raster
+5272,output,output parameter,Coverage,Raster
+5273,output,output parameter,Coverage,Raster
+5274,output,output parameter,Coverage,Raster
+5275,output,output parameter,Coverage,Raster
+5276,output,output parameter,Feature,Vector
+5277,output,output parameter,Feature,Vector
+5278,output,output parameter,Feature,Vector
+5279,output,output parameter,Feature,Vector
+5280,output,output parameter,Feature,Vector
+5281,output,output parameter,Feature,Vector
+5282,output,output parameter,String,LiteralData
+5283,output,output parameter,Feature,Vector
+5284,output,output parameter,String,LiteralData
+5285,output,output parameter,String,LiteralData
+5286,output,output parameter,Feature,Vector
+5287,output,output parameter,Feature,Vector
+5288,output,output parameter,String,LiteralData
+5289,output,output parameter,Feature,Vector
+5290,output,output parameter,Feature,Vector
+5291,output,output parameter,Feature,Vector
+5292,output,output parameter,Feature,Vector
+5293,output,output parameter,String,LiteralData
+5294,output,,FeatureCollection,Vector
+5295,output,output parameter,String,LiteralData
+5296,output,output parameter,String,LiteralData
+5297,output,output parameter,Table,NonGeoData
+5298,output,output parameter,Coverage,Raster
+5299,output,output parameter,Coverage,Raster
+5300,,,,
+5301,output,Input raster layer.,Coverage,Raster
+5302,output,,FeatureCollection,Vector
+5303,output,output,Coverage,Raster
+5304,output,output,Coverage,Raster

@@ -2,18 +2,18 @@ import json
 import csv
 import os
 
-# 处理单个 JSON 文件并提取所有 Output 部分信息的函数
+# Process a single JSON file and extract all Output section fields
 def process_json_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    # 初始化行列表
+    # Initialize row list
     row = []
 
-    # 处理 Output 部分
+    # Process Output section
     outputs = data.get('Output', [])
 
-    # 如果有 Output 数据，将所有 Output 的信息合并到行列表中
+    # If Output exists, append all Output fields to the row list
     if outputs:
         for output_item in outputs:
             output_title = output_item.get('Title', '')
@@ -36,22 +36,22 @@ def process_json_file(file_path):
             else:
                 row.extend([str(output_title), str(output_abstract), str(output_identifier), '', ''])
     else:
-        # 如果没有 Output 数据，添加空值到行列表中
-        row.extend([''] * 5)  # 5 是根据 Output 的每行数据中的内容计算得出
+        # If no Output data, append empty values to the row list
+        row.extend([''] * 5)  # 5 is based on the number of fields per Output row
 
     return row
 
-# JSON 文件所在目录
-input_dir = 'json_datas'  # 将此处修改为包含 JSON 文件的目录
+# Directory containing JSON files
+input_dir = 'json_datas'  # Update this to the directory containing JSON files
 
-# 输出 CSV 文件
+# Output CSV file
 output_csv = 'Output.csv'
 
-# 打开 CSV 文件准备写入
+# Open CSV file for writing
 with open(output_csv, 'w', newline='', encoding='utf-8') as csvfile:
     writer = csv.writer(csvfile)
 
-    # 处理目录中的所有 JSON 文件
+    # Process all JSON files in the directory
     for file_name in os.listdir(input_dir):
         if file_name.endswith('.json'):
             file_path = os.path.join(input_dir, file_name)
