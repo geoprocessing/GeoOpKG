@@ -100,6 +100,7 @@ The script will prompt for a user question and output an answer generated from t
 ## Data Assets
 
 - `data/question_90.csv`: Example question set
+- `data/algorithm_table.csv`: Classified algorithm class
 - `data/operator_ontology.png`: Operator ontology diagram
 - `data/Import into Neo4j/`: CSVs and import scripts for Neo4j
 - `data/GeoOpKG.zip`: Exported full knowledge-graph snapshot from a built Neo4j instance (optional data snapshot)
