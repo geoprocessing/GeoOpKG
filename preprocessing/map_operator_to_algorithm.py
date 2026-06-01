@@ -7,23 +7,23 @@ import dashscope
 from dashscope import Generation
 
 
-# Set API key
+# 请设置API-KEY
 dashscope.api_key = ""
-# Define question and message template
+# 定义问题和消息列表模板
 messages_template = [
     {'role': 'system', 'content': 'You are a helpful assistant.'},
     {'role': 'user', 'content': ''}
 ]
 
-# Read operator data and category data
+# 读取算子数据和类别数据
 operators_df = pd.read_csv('ArcGIS_Input.csv', encoding='latin1', header=None)
 
-# Read category CSV, assuming column order:
+# 读取类别CSV，假设列顺序为：
 # Level 1;Level 2;Level 3;Level 1 Description;Level 2 Description;Level 3 Description;Level 2 InputType;Level 2 OutputType;Level 3 InputType;Level 3 OutputType
 categories_df = pd.read_csv('Algorithm.csv', encoding='GBK', header=None)
 
-# Build category dictionary
-# Structure: { Level1: { 'description': ..., 'subcategories': { Level2: { 'description': ..., 'InputType': ..., 'OutputType': ..., 'subcategories': { Level3: { 'description': ..., 'InputType': ..., 'OutputType': ... } } } } } }
+# 创建类别字典
+# 结构: { Level1: { 'description': ..., 'subcategories': { Level2: { 'description': ..., 'InputType': ..., 'OutputType': ..., 'subcategories': { Level3: { 'description': ..., 'InputType': ..., 'OutputType': ... } } } } } }
 categories_dict = {}
 
 for _, row in categories_df.iterrows():
@@ -57,7 +57,7 @@ for _, row in categories_df.iterrows():
                 'OutputType': level3_out
             }
 
-# Function: validate classification (supports Level3/Level2/Level1)
+# 函数：检查分类结果是否有效（支持 Level3/Level2/Level1）
 def is_valid_classification(classification_text):
     for level1, info1 in categories_dict.items():
         if classification_text == level1:
@@ -70,7 +70,7 @@ def is_valid_classification(classification_text):
                     return True
     return False
 
-# Classify a single operator with the model
+# 对单个算子调用模型进行分类·
 def classify_operator(software, name, description, parameters):
     prompt = (
         f"You are a GIS domain expert.\n"
@@ -123,7 +123,7 @@ def classify_operator(software, name, description, parameters):
         if response.status_code == HTTPStatus.OK:
             result = response.output['choices'][0]['message']['content'].strip()
             print(result)
-            # Extract category name
+            # 提取类别名称
             category = result.split(' - ')[0] if " - " in result else result
             print(category)
             return category
@@ -135,7 +135,7 @@ def classify_operator(software, name, description, parameters):
         return "Classification failed."
 
 
-# Function: classify a single operator (with retry)
+# 函数：对单个算子进行分类（带重试机制）
 def classify_operator_with_retry(software, name, description, parameters, max_retries=1):
     retries = 0
     classification_text = None
@@ -145,68 +145,68 @@ def classify_operator_with_retry(software, name, description, parameters, max_re
         if is_valid_classification(classification_text):
             return classification_text
         else:
-            #print(f"Classification does not match Category - Explanation format, retry {retries + 1}...")
+            #print(f"分类不符合 类别 - 解释 规范，重试第 {retries + 1} 次...")
             #print(f"classification_text:",classification_text)
             retries += 1
-            time.sleep(1)  # Add delay to avoid frequent API calls
+            time.sleep(1)  # 加延迟，避免频繁调用API
 
-    #print("Classification still invalid after retries, skipping...")
+    #print("多次尝试后分类仍无效，跳过...")
     return "Classification failed."
 
-# Check if classification is lowest level
+# 判断分类是否最低级
 def is_lowest_level(category_name):
     for level1, info1 in categories_dict.items():
         if category_name == level1:
-            # Level1: if there are subcategories, not lowest
+            # Level1，如果有子类，则不是最低级
             return len(info1['subcategories']) == 0
         for level2, info2 in info1['subcategories'].items():
             if category_name == level2:
-                # Level2: if there are subcategories, not lowest
+                # Level2，如果有子类，则不是最低级
                 return len(info2['subcategories']) == 0
             for level3 in info2['subcategories'].keys():
                 if category_name == level3:
-                    # Level3 has no subcategories, always lowest
+                    # Level3没有子类，肯定最低级
                     return True
-    return True  # If not found, default to lowest level
+    return True  # 如果找不到，默认认为最低级
 
-# Add classification for each operator
-batch_size = 7  # Batch size per iteration
+# 为每个算子添加分类
+batch_size = 7  # 每次处理5个描述
 classified_operators = []
 
 for i in range(0, len(operators_df), batch_size):
     batch = operators_df.iloc[i:i + batch_size]
     for j, (_, row) in enumerate(batch.iterrows()):
-        software = row[0]  # Operator software
-        name = row[2]  # Operator name
-        operator_id = row[3]  # Operator ID
-        description = row[4]  # Operator description
+        software = row[0]  # 算子所在软件
+        name = row[2]  # 算子名称
+        operator_id = row[3]  # 算子ID
+        description = row[4]  # 算子描述
 
-        # Process parameter info
+        # 处理参数信息
         parameters = []
         num_cols_per_param = 4
         for k in range(5, len(row),4):
-            param_name = row[k]  # Parameter column 1
-            param_desc = row[k + 1] if k + 1 < len(row) else ''  # Parameter column 2
-            param_extra = row[k + 3] if k + 3 < len(row) else ''  # Column 4
+            param_name = row[k]#参数第一列
+            param_desc = row[k + 1] if k + 1 < len(row) else ''#参数第二列
+            param_extra = row[k + 3] if k + 3 < len(row) else ''  # 第4列
 
             if pd.notna(param_name):
                 parameters.append((param_name, param_desc, param_extra))
 
-        # Classification (with retry)
+        # 分类（带补偿机制）
         classification_text = classify_operator_with_retry(software, name, description, parameters)
 
-        # Check if lowest level
+        # 判断是否最低级
         lowest_flag = 0 if is_lowest_level(classification_text) else 1
 
         classified_operators.append([operator_id, classification_text,lowest_flag])
 
-        # Add delay to avoid frequent API calls
+        # 避免频繁API调用，加上延迟
         time.sleep(1)
 
-# Save classification results
+# 保存分类结果
 if classified_operators:
     classified_df = pd.DataFrame(classified_operators, columns=['Operator ID', 'Classification', 'NotLowest'])
     classified_df.to_csv('ArcGIS_Algorithm.csv', index=False, encoding='gbk')
-    #print("Classification results saved!")
+    #print("分类结果已保存!")
 else:
     print("No classification results to save.")

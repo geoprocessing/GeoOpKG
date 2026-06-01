@@ -1,19 +1,19 @@
 from neo4j import GraphDatabase
 import pandas as pd
 
-# Set Neo4j connection info
+# 请设置连接Neo4j数据库信息
 uri = "bolt://localhost:7687"
 username = ""
 password = ""
 driver = GraphDatabase.driver(uri, auth=(username, password))
 
 def create_hierarchy(tx, row):
-    # Extract all columns (assumed names A, B, C, D, E, F, G, H, I, J)
+    # 提取所有列（假设列名为 A, B, C, D, E, F, G, H, I, J）
     A, B, C = row[0], row[1], row[2]
     D, E, F = row[3], row[4], row[5]
     G, H, I, J = row[6], row[7], row[8], row[9]
 
-    # Store valid Algorithm node info (name, description)
+    # 存储有效的 Algorithm 节点信息 (name, description)
     algos = []
     if pd.notna(A) and A.strip():
         algos.append(('A', A.strip(), D.strip() if pd.notna(D) else ""))
@@ -22,7 +22,7 @@ def create_hierarchy(tx, row):
     if pd.notna(C) and C.strip():
         algos.append(('C', C.strip(), F.strip() if pd.notna(F) else ""))
 
-    # Create Algorithm nodes (deduplicated)
+    # 创建 Algorithm 节点（去重）
     for tag, name, desc in algos:
         tx.run("""
             MERGE (a:Algorithm {Name: $name})
@@ -33,7 +33,7 @@ def create_hierarchy(tx, row):
             END
         """, name=name, desc=desc)
 
-    # Build PartOf hierarchy: B -> A, C -> B
+    # 建立 PartOf 层级关系：B -> A, C -> B
     if pd.notna(B) and B.strip() and pd.notna(A) and A.strip():
         tx.run("""
             MERGE (child:Algorithm {Name: $child}) 
@@ -48,17 +48,17 @@ def create_hierarchy(tx, row):
             MERGE (child)-[:PartOf]->(parent)
         """, child=C.strip(), parent=B.strip())
 
-    # Process inputs/outputs only when the corresponding Algorithm exists
+    # 处理输入输出：仅当对应 Algorithm 存在时
     inputs_outputs = []
 
-    # Subclass 1 input/output (bind to B)
+    # 子类1 的输入输出（绑定到 B）
     if pd.notna(B) and B.strip():
         if pd.notna(G) and G.strip():
             inputs_outputs.append(('input', G.strip(), B.strip()))
         if pd.notna(H) and H.strip():
             inputs_outputs.append(('output', H.strip(), B.strip()))
 
-    # Subclass 2 input/output (bind to C)
+    # 子类2 的输入输出（绑定到 C）
     if pd.notna(C) and C.strip():
         if pd.notna(I) and I.strip():
             inputs_outputs.append(('input', I.strip(), C.strip()))
@@ -81,11 +81,11 @@ def create_hierarchy(tx, row):
                 MERGE (a)-[r:has_GenericOutput]->(go)
             """, title=title, alg_name=alg_name)
 
-# Read data
-df = pd.read_csv("Algorithm.csv", encoding='gbk')  # Or Excel
-df = df.fillna('')  # Convert NaN to ''
+# 读取数据
+df = pd.read_csv("Algorithm.csv", encoding='gbk')  # 或 Excel
+df = df.fillna('')  # 转换 NaN 为 ''
 
-# Execute writes
+# 执行写入
 with driver.session() as session:
     for _, row in df.iterrows():
         session.execute_write(create_hierarchy, row)

@@ -4,21 +4,21 @@ from openpyxl import Workbook
 from fake_useragent import UserAgent
 import pandas as pd
 
-# Toolbox URL - toolset - tools
+#工具箱url-工具集-工具
 
-# Crawl toolset URLs from the toolbox
+# 爬取工具箱中工具集的地址
 url = "https://desktop.arcgis.com/en/arcmap/10.3/tools/workflow-manager-toolbox/overview-of-wmx-tools.htm"
-# Request header
+# 请求header
 header = {'User-Agent': UserAgent().random}
 response = requests.get(url, headers=header)
 
-# Get page content
+# 获取网页信息
 soup = BeautifulSoup(response.content, 'html.parser')
-# Parse table data
+# 到表格数据
 tr_tags = soup.find_all('tbody', class_="align-middle")
-# Toolset URL list
+# 工具集URL列表
 Toolset_list = []
-# Locate href
+# 定位到href
 for tr_tags in tr_tags:
     td_tags = tr_tags.select('tr td')
     if len(td_tags)<12:
@@ -34,20 +34,20 @@ for tr_tags in tr_tags:
 Operator = []
 Input = []
 
-# Traverse toolsets
+# 遍历工具集
 for j in range(0, len(Toolset_list)):
     url = "https://desktop.arcgis.com" + Toolset_list[j]
     header = {'User-Agent': UserAgent().random}
     response = requests.get(url, headers=header)
     soup = BeautifulSoup(response.content, 'html.parser')
-    # Parse table data
+    # 到表格数据
     tr_tags = soup.find_all('tbody', class_="align-middle")
 
-    # Tool URL list
+    # 工具url
     Tool_list = []
     In = []
     Op = []
-    # Locate href
+    # 定位到href
     for tr_tags in tr_tags:
         td_tags = tr_tags.select('tr td')
         #print(td_tags)
@@ -68,18 +68,18 @@ for j in range(0, len(Toolset_list)):
             list1.append(Abstract)
         Op.append(list1)
     #print(Tool_list)
-    # Traverse tools
+    # 遍历工具
     for r in range(0, len(Tool_list)):
         url = "https://desktop.arcgis.com" + Tool_list[r]
 
         header = {'User-Agent': UserAgent().random}
         response = requests.get(url, headers=header)
         soup = BeautifulSoup(response.content, 'html.parser')
-        # Parse table data
+        # 到表格数据
         tr_tags = soup.find('table', class_="gptoolparamtbl")
         list = []
         #print(len(tr_tags))
-        # Iterate through tr tags and extract td text
+        # 循环遍历获取tr标签下的td标签文本
         td_tags = tr_tags.select('tr td')
         # print(td_tags)
         for i in range(3, len(td_tags)):
@@ -90,8 +90,8 @@ for j in range(0, len(Toolset_list)):
     Operator.append(Op)
     Input.append(In)
 
-df = pd.DataFrame(Operator)  # Create a DataFrame
-df.to_excel(r"Op.xlsx", index=False)  # Export DataFrame to Excel
+df = pd.DataFrame(Operator)  # 创建一个 DataFrame
+df.to_excel(r"Op.xlsx", index=False)  # 将 DataFrame 导出为 Excel 文件
 
-df = pd.DataFrame(Input)  # Create a DataFrame
-df.to_excel(r"In.xlsx", index=False)  # Export DataFrame to Excel
+df = pd.DataFrame(Input)  # 创建一个 DataFrame
+df.to_excel(r"In.xlsx", index=False)  # 将 DataFrame 导出为 Excel 文件
