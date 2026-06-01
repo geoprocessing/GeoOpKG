@@ -1,24 +1,24 @@
 import pandas as pd
 from py2neo import Graph, Node, Relationship
 
-# Set Neo4j connection info
-graph = Graph("bolt://localhost:7687", auth=("", ""))
+# Connect to Neo4j database
+graph = Graph("bolt://localhost:7687", auth=("neo4j", ""))
 
 # Read CSV file (no header)
-data = pd.read_csv('ArcGIS_Input.csv', encoding="GBK", header=None)
+data = pd.read_csv('Geoserver_Input.csv', encoding="GBK", header=None)
 
-# Iterate over each row
+# Iterate through each row of data
 for index, row in data.iterrows():
-    # Find or create Software node using fixed indexes
+    # Find or create Software node using fixed index
     software_node = graph.nodes.match("Software", Name=row[0], version=row[1]).first()
     if not software_node:
         software_node = Node("Software", Name=row[0], version=row[1])
         graph.create(software_node)
 
-    # Find or create Operator node using fixed indexes
-    operator_node = graph.nodes.match("Operation", Title=row[2], ID=row[3], Description=row[4]).first()
+    # Find or create Operator node using fixed index
+    operator_node = graph.nodes.match("Operation", Title=row[2], ID=row[3], Description=row[5],Identifier=row[4]).first()
     if not operator_node:
-        operator_node = Node("Operation", Title=row[2], ID=row[3], Description=row[4])
+        operator_node = Node("Operation", Title=row[2], ID=row[3], Description=row[5],Identifier=row[4])
         graph.create(operator_node)
 
     # Create Operator ImplementedIn Software relationship
@@ -28,7 +28,7 @@ for index, row in data.iterrows():
         graph.create(implement_relationship)
 
     # Starting from the 6th column, build a group every 4 columns
-    for i in range(5, len(row), 4):
+    for i in range(6, len(row), 4):
         if pd.notna(row[i]) and pd.notna(row[i + 1]):
             # Find or create GenericInput node
             input_node = graph.nodes.match("Input", Title=row[i], Description=row[i + 1]).first()

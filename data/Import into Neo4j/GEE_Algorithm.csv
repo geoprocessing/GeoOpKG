@@ -1,0 +1,1425 @@
+3117,Edge detection filters,0
+3118,General management,0
+3119,Neighborhood statistics,0
+3120,GIS elements management,0
+3121,Metadata editing,0
+3122,General management,0
+3123,Raster data editing,0
+3124,Image classification,1
+3125,Vector data management,0
+3126,Geometry,0
+3127,Geometry,0
+3128,Geometry,0
+3129,Geometry,0
+3130,Geometry,0
+3131,Vector spatial analysis,1
+3132,Geometry,0
+3133,Vector data management,0
+3134,Geometry,0
+3135,Geometry,0
+3136,Surface analysis,0
+3137,Edge detection filters,0
+3138,Raster calculation,0
+3139,Image segmentation,0
+3140,Image segmentation,0
+3141,Image segmentation,0
+3142,Image segmentation,0
+3143,General management,0
+3144,Atmospheric correction,0
+3145,Radiometric correction,0
+3146,Data extraction,0
+3147,Band arithmetic,0
+3148,Image enhancement,1
+3149,GIS elements management,0
+3150,Projection transforms,0
+3151,Geometric correction,0
+3152,General management,0
+3153,Change detection,0
+3154,Change and feature extraction,1
+3155,Change detection,0
+3156,Change detection,0
+3157,Spatial interpolation,0
+3158,Change detection,0
+3159,Change detection,0
+3160,Change detection,0
+3161,Surface analysis,0
+3162,Raster data management,0
+3163,Raster calculation,0
+3164,Raster calculation,0
+3165,Raster calculation,0
+3166,Raster calculation,0
+3167,Raster calculation,0
+3168,Raster calculation,0
+3169,Raster calculation,0
+3170,Raster calculation,0
+3171,Raster calculation,0
+3172,Raster calculation,0
+3173,Raster calculation,0
+3174,Raster calculation,0
+3175,Raster calculation,0
+3176,Raster calculation,0
+3177,Raster calculation,0
+3178,Raster data editing,0
+3179,Raster calculation,0
+3180,Raster calculation,0
+3181,Raster calculation,0
+3182,Raster calculation,0
+3183,Raster calculation,0
+3184,Data extraction,0
+3185,Raster calculation,0
+3186,Raster calculation,0
+3187,Raster calculation,0
+3188,Raster data editing,0
+3189,Raster calculation,0
+3190,Raster calculation,0
+3191,Raster calculation,0
+3192,Raster calculation,0
+3193,Raster calculation,0
+3194,Raster calculation,0
+3195,Raster calculation,0
+3196,Raster calculation,0
+3197,Raster calculation,0
+3198,Raster data editing,0
+3199,Raster calculation,0
+3200,Raster calculation,0
+3201,Raster calculation,0
+3202,Data extraction,0
+3203,Raster calculation,0
+3204,Raster calculation,0
+3205,Raster calculation,0
+3206,Raster calculation,0
+3207,Raster data editing,0
+3208,Raster data editing,0
+3209,Raster data editing,0
+3210,Raster data editing,0
+3211,Raster data editing,0
+3212,Image enhancement,1
+3213,Raster calculation,0
+3214,Data management,1
+3215,Raster calculation,0
+3216,Raster calculation,0
+3217,Data processing,1
+3218,Raster calculation,0
+3219,Raster calculation,0
+3220,Raster data editing,0
+3221,Spatial statistical analysis,1
+3222,Raster calculation,0
+3223,Raster calculation,0
+3224,Raster calculation,0
+3225,Raster calculation,0
+3226,Raster calculation,0
+3227,Raster calculation,0
+3228,Statistical analysis,1
+3229,Raster calculation,0
+3230,Raster calculation,0
+3231,Raster calculation,0
+3232,Raster calculation,0
+3233,Raster calculation,0
+3234,Data management,1
+3235,Raster calculation,0
+3236,Raster calculation,0
+3237,Raster calculation,0
+3238,Raster calculation,0
+3239,Raster calculation,0
+3240,Raster calculation,0
+3241,Raster calculation,0
+3242,Raster data management,0
+3243,Raster calculation,0
+3244,Data management,1
+3245,Raster calculation,0
+3246,Raster data management,0
+3247,Data management,1
+3248,Raster calculation,0
+3249,Raster calculation,0
+3250,Raster data editing,0
+3251,Raster calculation,0
+3252,Raster calculation,0
+3253,Raster calculation,0
+3254,Data extraction,0
+3255,Raster calculation,0
+3256,Raster calculation,0
+3257,Raster calculation,0
+3258,Raster calculation,0
+3259,Raster calculation,0
+3260,Raster data editing,0
+3261,Raster data editing,0
+3262,Raster data editing,0
+3263,Raster data editing,0
+3264,Raster data editing,0
+3265,Data processing,1
+3266,Raster data editing,0
+3267,Raster data editing,0
+3268,Data export,0
+3269,Raster data editing,0
+3270,Raster data editing,0
+3271,Raster data editing,0
+3272,Raster data editing,0
+3273,Raster data management,0
+3274,Data management,1
+3275,Raster calculation,0
+3276,General management,0
+3277,Raster data management,0
+3278,Raster data editing,0
+3279,Data import,0
+3280,Format conversion,0
+3281,General management,0
+3282,Spatial relationship modeling,0
+3283,Hypothesis testing,0
+3284,Supervised classification,0
+3285,Supervised classification,0
+3286,Image classification,1
+3287,Supervised classification,0
+3288,Image classification,1
+3289,Supervised classification,0
+3290,Supervised classification,0
+3291,GIS elements management,0
+3292,Image classification,1
+3293,Supervised classification,0
+3294,Supervised classification,0
+3295,Supervised classification,0
+3296,Supervised classification,0
+3297,Supervised classification,0
+3298,Supervised classification,0
+3299,Supervised classification,0
+3300,GIS elements management,0
+3301,Statistics analysis,0
+3302,Cluster and pattern analysis,0
+3303,Cluster and pattern analysis,0
+3304,Cluster and pattern analysis,0
+3305,Cluster and pattern analysis,0
+3306,Cluster and pattern analysis,0
+3307,Spatial statistical analysis,1
+3308,Hypothesis testing,0
+3309,Hypothesis testing,0
+3310,Statistics analysis,0
+3311,Spatial statistical analysis,1
+3312,Correlation and association,0
+3313,Statistics analysis,0
+3314,Statistics analysis,0
+3315,General management,0
+3316,General management,0
+3317,General management,0
+3318,Dimensional data management,0
+3319,General management,0
+3320,Vector data attribute editing,0
+3321,Dimensional data management,0
+3322,Data extraction,0
+3323,GIS elements management,0
+3324,General management,0
+3325,Dimensional data management,0
+3326,Dimensional data management,0
+3327,Data extraction,0
+3328,General management,0
+3329,Format conversion,0
+3330,Dimensional data management,0
+3331,Dimensional data management,0
+3332,Dimensional data management,0
+3333,Dimensional data management,0
+3334,Dimensional data management,0
+3335,Dimensional data management,0
+3336,Dimensional data management,0
+3337,General management,0
+3338,General management,0
+3339,General management,0
+3340,Dimensional data management,0
+3341,Dimensional data management,0
+3342,GIS elements management,0
+3343,General management,0
+3344,General management,0
+3345,General management,0
+3346,General management,0
+3347,General management,0
+3348,GIS elements management,0
+3349,Data extraction,0
+3350,GIS elements management,0
+3351,General management,0
+3352,Data extraction,0
+3353,Data management,1
+3354,GIS elements management,0
+3355,General management,0
+3356,GIS elements management,0
+3357,General management,0
+3358,General management,0
+3359,General management,0
+3360,GIS elements management,0
+3361,General management,0
+3362,General management,0
+3363,Format conversion,0
+3364,General management,0
+3365,Spatial statistical analysis,1
+3366,GIS elements management,0
+3367,Vector shape analysis,0
+3368,General management,0
+3369,Vector data management,0
+3370,Geometry,0
+3371,Central tendency analysis,0
+3372,Proximity analysis,0
+3373,Proximity analysis,0
+3374,Vector overlay analysis,0
+3375,Vector overlay analysis,0
+3376,Geometry,0
+3377,Metadata editing,0
+3378,Geometry,0
+3379,Geometry,0
+3380,Geometry,0
+3381,Geometry,0
+3382,Proximity analysis,0
+3383,Data import,0
+3384,Vector data management,0
+3385,Data extraction,0
+3386,GIS elements management,0
+3387,Data management,1
+3388,Data export,0
+3389,Vector data attribute editing,0
+3390,Data extraction,0
+3391,Vector shape analysis,0
+3392,GIS elements management,0
+3393,Geometry,0
+3394,Geometry,0
+3395,Vector shape analysis,0
+3396,Vector shape analysis,0
+3397,GIS elements management,0
+3398,GIS elements management,0
+3399,General management,0
+3400,GIS elements management,0
+3401,GIS elements management,0
+3402,Geometry,0
+3403,Geometry,0
+3404,Data extraction,0
+3405,Vector data attribute editing,0
+3406,Projection transforms,0
+3407,Geometry,0
+3408,Proximity analysis,0
+3409,Data management,1
+3410,Statistics analysis,0
+3411,Statistics analysis,0
+3412,Statistics analysis,0
+3413,Statistics analysis,0
+3414,Statistics analysis,0
+3415,Statistics analysis,0
+3416,Statistics analysis,0
+3417,Statistics analysis,0
+3418,Statistics analysis,0
+3419,Statistics analysis,0
+3420,Statistics analysis,0
+3421,Statistics analysis,0
+3422,Statistics analysis,0
+3423,Statistics analysis,0
+3424,Statistics analysis,0
+3425,General management,0
+3426,Geometry,0
+3427,Statistics analysis,0
+3428,Cluster and pattern analysis,0
+3429,Metadata editing,0
+3430,Distance analysis,0
+3431,Vector data management,0
+3432,Annotation & Labeling,0
+3433,Statistics analysis,0
+3434,Database management,0
+3435,Data extraction,0
+3436,Proximity analysis,0
+3437,Data extraction,0
+3438,Data extraction,0
+3439,Vector data management,0
+3440,Vector data management,0
+3441,Data extraction,0
+3442,Data extraction,0
+3443,Data export,0
+3444,Data extraction,0
+3445,Data Management and Organization,1
+3446,Statistics analysis,0
+3447,Data extraction,0
+3448,Spatial interpolation,0
+3449,Statistics analysis,0
+3450,Spatial interpolation,0
+3451,General management,0
+3452,Data import,0
+3453,Vector data attribute editing,0
+3454,Data management,1
+3455,Vector data management,0
+3456,GIS elements management,0
+3457,Vector data attribute editing,0
+3458,Spatial / Stratified sampling,0
+3459,Statistics analysis,0
+3460,Raster calculation,0
+3461,Vector data attribute editing,0
+3462,Database management,0
+3463,Vector data attribute editing,0
+3464,Data management,1
+3465,General management,0
+3466,Statistics analysis,0
+3467,Vector data management,0
+3468,Annotation & Labeling,0
+3469,Data extraction,0
+3470,GIS elements management,0
+3471,Geometry,0
+3472,Data extraction,0
+3473,Database management,0
+3474,Vector shape analysis,0
+3475,General management,0
+3476,Data clipping,0
+3477,Data extraction,0
+3478,Vector overlay analysis,0
+3479,Dimensional data management,0
+3480,Data extraction,0
+3481,Dimensional data management,0
+3482,Vector overlay analysis,0
+3483,Index management,0
+3484,Statistics analysis,0
+3485,Cache management,0
+3486,Data extraction,0
+3487,Data management,1
+3488,Raster calculation,0
+3489,Raster calculation,0
+3490,Index management,0
+3491,Metadata editing,0
+3492,GIS elements management,0
+3493,Database management,0
+3494,Vector overlay analysis,0
+3495,Vector overlay analysis,0
+3496,Raster calculation,0
+3497,Raster calculation,0
+3498,Vector data attribute editing,0
+3499,Metadata editing,0
+3500,Index management,0
+3501,Image filtering / edge detection,1
+3502,Index management,0
+3503,Raster calculation,0
+3504,Raster calculation,0
+3505,General management,0
+3506,GIS elements management,0
+3507,Database management,0
+3508,Format conversion,0
+3509,GIS elements management,0
+3510,GIS elements management,0
+3511,Vector data attribute editing,0
+3512,Proximity analysis,0
+3513,Data management,1
+3514,Vector data management,0
+3515,Vector shape analysis,0
+3516,General management,0
+3517,Vector data management,0
+3518,Geometry,0
+3519,Geometry,0
+3520,Proximity analysis,0
+3521,Proximity analysis,0
+3522,Geometry,0
+3523,Vector spatial analysis,1
+3524,Geometry,0
+3525,Vector data management,0
+3526,Vector spatial analysis,1
+3527,Geometry,0
+3528,Geometry,0
+3529,Vector spatial analysis,1
+3530,3D collection,0
+3531,Proximity analysis,0
+3532,Geometry corrections,0
+3533,General management,0
+3534,Geometry corrections,0
+3535,GIS elements management,0
+3536,Data management,1
+3537,Geometry,0
+3538,Vector spatial analysis,1
+3539,GIS elements management,0
+3540,Vector shape analysis,0
+3541,Vector shape analysis,0
+3542,GIS elements management,0
+3543,Data management,1
+3544,Geometry,0
+3545,Geometry,0
+3546,Data export,0
+3547,Data export,0
+3548,Projection transforms,0
+3549,GIS elements management,0
+3550,Geometry,0
+3551,Proximity analysis,0
+3552,Vector data management,0
+3553,Vector shape analysis,0
+3554,General management,0
+3555,Geometry,0
+3556,Geometry,0
+3557,Central tendency analysis,0
+3558,Proximity analysis,0
+3559,Proximity analysis,0
+3560,Geometry,0
+3561,Vector spatial analysis,1
+3562,Geometry,0
+3563,Vector data management,0
+3564,Geometry,0
+3565,Geometry,0
+3566,Geometry,0
+3567,Vector overlay analysis,0
+3568,Geometry,0
+3569,Proximity analysis,0
+3570,Vector shape analysis,0
+3571,Data extraction,0
+3572,Geometry,0
+3573,Data extraction,0
+3574,Vector data management,0
+3575,Vector overlay analysis,0
+3576,Vector overlay analysis,0
+3577,Vector shape analysis,0
+3578,Vector shape analysis,0
+3579,Vector shape analysis,0
+3580,Projection,1
+3581,Data export,0
+3582,Geometry,0
+3583,Geometry,0
+3584,Format conversion,0
+3585,Format conversion,0
+3586,Projection transforms,0
+3587,Vector data management,0
+3588,Vector overlay analysis,0
+3589,Proximity analysis,0
+3590,Vector data management,0
+3591,Vector shape analysis,0
+3592,General management,0
+3593,Vector shape analysis,0
+3594,Geometry,0
+3595,Vector shape analysis,0
+3596,Proximity analysis,0
+3597,Proximity analysis,0
+3598,Vector overlay analysis,0
+3599,Geometry,0
+3600,Geometry,0
+3601,Vector data management,0
+3602,Geometry,0
+3603,Geometry,0
+3604,Geometry,0
+3605,Vector spatial analysis,1
+3606,Geometry,0
+3607,Proximity analysis,0
+3608,GIS elements management,0
+3609,General management,0
+3610,Geometry,0
+3611,Vector data management,0
+3612,Vector data management,0
+3613,Vector overlay analysis,0
+3614,Vector overlay analysis,0
+3615,Vector shape analysis,0
+3616,Vector shape analysis,0
+3617,Vector shape analysis,0
+3618,Define projection,0
+3619,Format conversion,0
+3620,Geometry,0
+3621,Vector shape analysis,0
+3622,Format conversion,0
+3623,Format conversion,0
+3624,Projection transforms,0
+3625,Metadata editing,0
+3626,Vector overlay analysis,0
+3627,Proximity analysis,0
+3628,Vector data management,0
+3629,Vector shape analysis,0
+3630,Cartography,1
+3631,Vector shape analysis,0
+3632,Geometry,0
+3633,Vector shape analysis,0
+3634,Proximity analysis,0
+3635,Proximity analysis,0
+3636,Geometry,0
+3637,Vector overlay analysis,0
+3638,Geometry,0
+3639,GIS elements management,0
+3640,Data extraction,0
+3641,Geometry,0
+3642,Vector overlay analysis,0
+3643,Geometry,0
+3644,Vector overlay analysis,0
+3645,Proximity analysis,0
+3646,Vector shape analysis,0
+3647,GIS elements management,0
+3648,Geometry,0
+3649,Vector data management,0
+3650,GIS elements management,0
+3651,Geometry,0
+3652,Vector overlay analysis,0
+3653,Vector shape analysis,0
+3654,Vector shape analysis,0
+3655,Vector shape analysis,0
+3656,Projection,1
+3657,Vector data management,0
+3658,Geometry,0
+3659,Vector overlay analysis,0
+3660,Format conversion,0
+3661,Format conversion,0
+3662,Projection transforms,0
+3663,Vector data management,0
+3664,Geometry,0
+3665,Proximity analysis,0
+3666,Vector data management,0
+3667,Vector shape analysis,0
+3668,General management,0
+3669,Geometry,0
+3670,Geometry,0
+3671,Vector shape analysis,0
+3672,Proximity analysis,0
+3673,Proximity analysis,0
+3674,Vector overlay analysis,0
+3675,Vector overlay analysis,0
+3676,Geometry,0
+3677,GIS elements management,0
+3678,Geometry,0
+3679,Geometry,0
+3680,Vector overlay analysis,0
+3681,Vector spatial analysis,1
+3682,Geometry,0
+3683,Proximity analysis,0
+3684,Vector shape analysis,0
+3685,GIS elements management,0
+3686,Geometry,0
+3687,Vector data management,0
+3688,Vector data management,0
+3689,Geometry,0
+3690,Vector overlay analysis,0
+3691,Vector shape analysis,0
+3692,Vector shape analysis,0
+3693,Vector shape analysis,0
+3694,Vector data management,0
+3695,Data management,1
+3696,Generalization,0
+3697,Geometry,0
+3698,Format conversion,0
+3699,Format conversion,0
+3700,Projection transforms,0
+3701,Vector data management,0
+3702,Geometry,0
+3703,Proximity analysis,0
+3704,Vector data management,0
+3705,Vector shape analysis,0
+3706,General management,0
+3707,Vector shape analysis,0
+3708,Geometry,0
+3709,Vector shape analysis,0
+3710,Proximity analysis,0
+3711,Proximity analysis,0
+3712,Vector overlay analysis,0
+3713,Proximity analysis,0
+3714,Geometry,0
+3715,Vector data management,0
+3716,Vector data management,0
+3717,Geometry,0
+3718,Geometry,0
+3719,Vector overlay analysis,0
+3720,Geometry,0
+3721,Proximity analysis,0
+3722,Vector shape analysis,0
+3723,Vector data management,0
+3724,Geometry,0
+3725,Vector data management,0
+3726,General management,0
+3727,Geometry,0
+3728,Vector spatial analysis,1
+3729,Vector shape analysis,0
+3730,Vector shape analysis,0
+3731,Vector shape analysis,0
+3732,Define projection,0
+3733,Format conversion,0
+3734,Geometry,0
+3735,Geometry,0
+3736,Format conversion,0
+3737,Format conversion,0
+3738,Projection transforms,0
+3739,Vector data management,0
+3740,Geometry,0
+3741,Proximity analysis,0
+3742,Vector data management,0
+3743,Vector shape analysis,0
+3744,Data driven mapping,0
+3745,Vector shape analysis,0
+3746,Geometry,0
+3747,Vector shape analysis,0
+3748,Proximity analysis,0
+3749,Proximity analysis,0
+3750,Vector overlay analysis,0
+3751,Vector spatial analysis,1
+3752,Vector shape analysis,0
+3753,Vector data management,0
+3754,Geometry,0
+3755,Vector data graph editing,0
+3756,Geometry,0
+3757,Vector overlay analysis,0
+3758,Geometry,0
+3759,Proximity analysis,0
+3760,Vector shape analysis,0
+3761,GIS elements management,0
+3762,Vector shape analysis,0
+3763,Vector data management,0
+3764,GIS elements management,0
+3765,Geometry,0
+3766,Vector spatial analysis,1
+3767,Vector shape analysis,0
+3768,Vector shape analysis,0
+3769,Vector shape analysis,0
+3770,Vector data management,0
+3771,Format conversion,0
+3772,Geometry,0
+3773,Geometry,0
+3774,Format conversion,0
+3775,Format conversion,0
+3776,Projection transforms,0
+3777,Data extraction,0
+3778,Geometry,0
+3779,Proximity analysis,0
+3780,Vector data management,0
+3781,Vector shape analysis,0
+3782,Cartography,1
+3783,Vector shape analysis,0
+3784,Geometry,0
+3785,Vector shape analysis,0
+3786,Proximity analysis,0
+3787,Proximity analysis,0
+3788,Vector spatial analysis,1
+3789,Vector overlay analysis,0
+3790,Geometry,0
+3791,Vector data management,0
+3792,Geometry,0
+3793,Geometry,0
+3794,Geometry,0
+3795,Vector overlay analysis,0
+3796,Vector overlay analysis,0
+3797,Proximity analysis,0
+3798,Vector shape analysis,0
+3799,General management,0
+3800,Geometry,0
+3801,Vector data management,0
+3802,Data extraction,0
+3803,Geometry,0
+3804,Vector overlay analysis,0
+3805,Vector shape analysis,0
+3806,Vector shape analysis,0
+3807,Vector shape analysis,0
+3808,Define projection,0
+3809,Vector data management,0
+3810,Geometry,0
+3811,Geometry,0
+3812,Format conversion,0
+3813,Format conversion,0
+3814,Projection transforms,0
+3815,Vector data management,0
+3816,Geometry,0
+3817,Proximity analysis,0
+3818,Vector data management,0
+3819,Vector shape analysis,0
+3820,General management,0
+3821,Geometry,0
+3822,Geometry,0
+3823,Vector shape analysis,0
+3824,Proximity analysis,0
+3825,Proximity analysis,0
+3826,Vector overlay analysis,0
+3827,Vector overlay analysis,0
+3828,Geometry,0
+3829,Vector data management,0
+3830,Geometry,0
+3831,Geometry,0
+3832,Vector overlay analysis,0
+3833,Proximity analysis,0
+3834,Geometry,0
+3835,Proximity analysis,0
+3836,Vector shape analysis,0
+3837,General management,0
+3838,Vector data management,0
+3839,GIS elements management,0
+3840,GIS elements management,0
+3841,Geometry,0
+3842,Vector overlay analysis,0
+3843,Vector shape analysis,0
+3844,Vector shape analysis,0
+3845,Vector shape analysis,0
+3846,Projection,1
+3847,Data export,0
+3848,Geometry,0
+3849,Geometry,0
+3850,Format conversion,0
+3851,Format conversion,0
+3852,Projection transforms,0
+3853,Vector data management,0
+3854,Vector overlay analysis,0
+3855,Proximity analysis,0
+3856,Vector shape analysis,0
+3857,General management,0
+3858,Vector shape analysis,0
+3859,Geometry,0
+3860,Vector shape analysis,0
+3861,Proximity analysis,0
+3862,Proximity analysis,0
+3863,Vector overlay analysis,0
+3864,Vector overlay analysis,0
+3865,Geometry,0
+3866,Vector data management,0
+3867,Geometry,0
+3868,Geometry,0
+3869,Geometry,0
+3870,Vector overlay analysis,0
+3871,Vector overlay analysis,0
+3872,Proximity analysis,0
+3873,Vector shape analysis,0
+3874,General management,0
+3875,GIS elements management,0
+3876,Vector shape analysis,0
+3877,Geometry,0
+3878,Vector data management,0
+3879,General management,0
+3880,Geometry,0
+3881,Geometry,0
+3882,Vector shape analysis,0
+3883,Vector shape analysis,0
+3884,Vector shape analysis,0
+3885,Projection,1
+3886,Index management,0
+3887,Format conversion,0
+3888,Geometry,0
+3889,Geometry,0
+3890,Format conversion,0
+3891,Format conversion,0
+3892,Projection transforms,0
+3893,Vector shape analysis,0
+3894,Geometry,0
+3895,Proximity analysis,0
+3896,Raster data management,0
+3897,Raster calculation,0
+3898,Raster calculation,0
+3899,Raster calculation,0
+3900,Raster data editing,0
+3901,Raster calculation,0
+3902,Raster calculation,0
+3903,Raster calculation,0
+3904,Raster calculation,0
+3905,Raster data management,0
+3906,Band arithmetic,0
+3907,Raster data management,0
+3908,Raster data management,0
+3909,Statistical analysis,1
+3910,Raster data management,0
+3911,Raster calculation,0
+3912,Dimensional data management,0
+3913,Principal component analysis (PCA),0
+3914,Raster calculation,0
+3915,Raster data management,0
+3916,Raster data management,0
+3917,Raster data management,0
+3918,Raster calculation,0
+3919,Structural transformation,1
+3920,GIS elements management,0
+3921,Raster calculation,0
+3922,Raster calculation,0
+3923,Raster calculation,0
+3924,Data management,1
+3925,Remote Sensing Image Processing,1
+3926,Raster calculation,0
+3927,Structural transformation,1
+3928,Raster calculation,0
+3929,Raster calculation,0
+3930,Raster calculation,0
+3931,Raster calculation,0
+3932,Raster overlay analysis,0
+3933,Raster calculation,0
+3934,Format conversion,0
+3935,Raster data management,0
+3936,Raster calculation,0
+3937,Raster calculation,0
+3938,Projection transforms,0
+3939,Raster data editing,0
+3940,Image classification,1
+3941,Data clipping,0
+3942,Data clipping,0
+3943,Data clipping,0
+3944,Image classification,1
+3945,Image segmentation,0
+3946,Neighborhood statistics,0
+3947,Raster calculation,0
+3948,Image filtering / edge detection,1
+3949,Metadata editing,0
+3950,Raster calculation,0
+3951,Raster calculation,0
+3952,Distance analysis,0
+3953,Metadata editing,0
+3954,Neighborhood statistics,0
+3955,Raster calculation,0
+3956,Distance analysis,0
+3957,Geometry,0
+3958,Geometric correction,0
+3959,Distance analysis,0
+3960,Raster calculation,0
+3961,Raster data management,0
+3962,Neighborhood statistics,0
+3963,Raster calculation,0
+3964,Raster calculation,0
+3965,Raster calculation,0
+3966,Raster calculation,0
+3967,Raster calculation,0
+3968,Raster data management,0
+3969,Raster calculation,0
+3970,Raster calculation,0
+3971,Distance analysis,0
+3972,Raster data management,0
+3973,Raster calculation,0
+3974,Raster data editing,0
+3975,Raster calculation,0
+3976,Image filtering / edge detection,1
+3977,Remote Sensing Image Processing,1
+3978,Neighborhood statistics,0
+3979,Smoothing / Denoising filters,0
+3980,Neighborhood statistics,0
+3981,Gray-level & Contrast enhancement,0
+3982,Raster calculation,0
+3983,Projection,1
+3984,Data management,1
+3985,Data extraction,0
+3986,Data export,0
+3987,Data management,1
+3988,Representation management,0
+3989,Vector data management,0
+3990,Data extraction,0
+3991,Visual expression,1
+3992,Visual expression,1
+3993,Texture analysis,0
+3994,Surface analysis,0
+3995,Raster calculation,0
+3996,Raster calculation,0
+3997,Texture analysis,0
+3998,Advanced image analysis,1
+3999,Change and feature extraction,1
+4000,Color & Multispectral enhancement,0
+4001,Raster calculation,0
+4002,GIS elements management,0
+4003,Raster data editing,0
+4004,Reclassification,0
+4005,Raster data management,0
+4006,Raster data management,0
+4007,Raster data management,0
+4008,Interpolation analysis,0
+4009,Image filtering / edge detection,1
+4010,Raster calculation,0
+4011,Format conversion,0
+4012,Data import,0
+4013,Data import,0
+4014,Dimensional data management,0
+4015,Raster calculation,0
+4016,Raster calculation,0
+4017,Raster data editing,0
+4018,Raster calculation,0
+4019,Raster calculation,0
+4020,Raster spatial analysis and calculation,1
+4021,Data processing,1
+4022,Raster calculation,0
+4023,Raster calculation,0
+4024,Statistical analysis,1
+4025,Raster calculation,0
+4026,Raster calculation,0
+4027,Raster calculation,0
+4028,Band arithmetic,0
+4029,Raster calculation,0
+4030,Raster calculation,0
+4031,Raster calculation,0
+4032,Raster calculation,0
+4033,Raster calculation,0
+4034,Raster calculation,0
+4035,Structural transformation,1
+4036,Band and image operations,1
+4037,Raster shape analysis,0
+4038,Structural transformation,1
+4039,Band arithmetic,0
+4040,Raster calculation,0
+4041,Raster calculation,0
+4042,Neighborhood statistics,0
+4043,Neighborhood statistics,0
+4044,Raster calculation,0
+4045,Band arithmetic,0
+4046,Reclassification,0
+4047,Raster calculation,0
+4048,Raster data editing,0
+4049,Raster calculation,0
+4050,Define projection,0
+4051,Define projection,0
+4052,Raster calculation,0
+4053,Raster calculation,0
+4054,Projection,1
+4055,Raster data management,0
+4056,Raster calculation,0
+4057,Color & Multispectral enhancement,0
+4058,Raster calculation,0
+4059,Image segmentation,0
+4060,Neighborhood statistics,0
+4061,Zonal statistics,0
+4062,Zonal statistics,0
+4063,Raster data management,0
+4064,Vector to raster,0
+4065,GIS elements management,0
+4066,Geometric correction,0
+4067,Reclassification,0
+4068,Raster data management,0
+4069,Projection transforms,0
+4070,Projection transforms,0
+4071,Raster calculation,0
+4072,Band arithmetic,0
+4073,Raster calculation,0
+4074,Raster calculation,0
+4075,Distance analysis,0
+4076,Data extraction,0
+4077,Data extraction,0
+4078,Data extraction,0
+4079,Raster data management,0
+4080,Raster data editing,0
+4081,Data export,0
+4082,Metadata editing,0
+4083,Projection transforms,0
+4084,Format conversion,0
+4085,Raster calculation,0
+4086,Raster calculation,0
+4087,Raster calculation,0
+4088,Representation management,0
+4089,Dimensional data management,0
+4090,Image filtering / edge detection,1
+4091,Band and image operations,1
+4092,Image filtering / edge detection,1
+4093,Multispectral image analysis,0
+4094,Raster calculation,0
+4095,Spatial / Stratified sampling,0
+4096,Raster calculation,0
+4097,Raster calculation,0
+4098,Raster calculation,0
+4099,Band and image operations,1
+4100,Raster data management,0
+4101,GIS elements management,0
+4102,Raster data management,0
+4103,Structural transformation,1
+4104,Raster data management,0
+4105,Reclassification,0
+4106,Reclassification,0
+4107,Raster data management,0
+4108,Raster data management,0
+4109,Raster data management,0
+4110,Raster data editing,0
+4111,Raster data management,0
+4112,Raster data management,0
+4113,Raster data management,0
+4114,Geometry,0
+4115,Raster calculation,0
+4116,Raster data management,0
+4117,Raster data management,0
+4118,Raster data management,0
+4119,Raster data editing,0
+4120,Raster data management,0
+4121,Hyperspectral image analysis,0
+4122,Raster data editing,0
+4123,Color & Multispectral enhancement,0
+4124,Raster data editing,0
+4125,Image filtering / edge detection,1
+4126,Raster data management,0
+4127,Data extraction,0
+4128,Data extraction,0
+4129,Statistics analysis,0
+4130,Data Management and Organization,1
+4131,Statistical analysis,1
+4132,Central tendency analysis,0
+4133,Central tendency analysis,0
+4134,Statistical analysis,1
+4135,Raster calculation,0
+4136,Statistics analysis,0
+4137,Statistical analysis,1
+4138,Statistics analysis,0
+4139,Statistics analysis,0
+4140,Statistical analysis,1
+4141,Statistical analysis,1
+4142,Raster calculation,0
+4143,Data Management and Organization,1
+4144,Geometry,0
+4145,Raster data management,0
+4146,Raster data management,0
+4147,Metadata editing,0
+4148,Cell statistics,0
+4149,Distance analysis,0
+4150,General management,0
+4151,Cartography,1
+4152,Hypothesis testing,0
+4153,Data Management and Organization,1
+4154,Data management,1
+4155,General management,0
+4156,Dimensional data management,0
+4157,Raster data management,0
+4158,General management,0
+4159,Hypothesis testing,0
+4160,Data import,0
+4161,Vector data management,0
+4162,GIS elements management,0
+4163,Data extraction,0
+4164,Cartography,1
+4165,Data import,0
+4166,Cartography,1
+4167,Data extraction,0
+4168,Data extraction,0
+4169,Data extraction,0
+4170,Cartography,1
+4171,Data processing,1
+4172,Data extraction,0
+4173,Band and image operations,1
+4174,Data import,0
+4175,Data import,0
+4176,Format conversion,0
+4177,Raster calculation,0
+4178,Raster calculation,0
+4179,Raster calculation,0
+4180,Data management,1
+4181,Raster calculation,0
+4182,Raster calculation,0
+4183,Raster calculation,0
+4184,Raster calculation,0
+4185,Raster calculation,0
+4186,Metadata editing,0
+4187,Raster spatial analysis and calculation,1
+4188,Statistics analysis,0
+4189,Raster calculation,0
+4190,Statistical analysis,1
+4191,Vector to raster,0
+4192,Reclassification,0
+4193,Format conversion,0
+4194,Data export,0
+4195,Metadata editing,0
+4196,General management,0
+4197,General management,0
+4198,Representation management,0
+4199,Raster calculation,0
+4200,Format conversion,0
+4201,Format conversion,0
+4202,Format conversion,0
+4203,Data extraction,0
+4204,General management,0
+4205,Vector data management,0
+4206,Vector data management,0
+4207,Spatial relationship modeling,0
+4208,Spatial relationship modeling,0
+4209,Spatial relationship modeling,0
+4210,Spatial relationship modeling,0
+4211,Spatial relationship modeling,0
+4212,Spatial relationship modeling,0
+4213,Image filtering / edge detection,1
+4214,Neighborhood statistics,0
+4215,Neighborhood statistics,0
+4216,Edge detection filters,0
+4217,Neighborhood statistics,0
+4218,Neighborhood statistics,0
+4219,Distance analysis,0
+4220,Neighborhood statistics,0
+4221,Image filtering / edge detection,1
+4222,Raster calculation,0
+4223,Edge detection filters,0
+4224,Edge detection filters,0
+4225,Edge detection filters,0
+4226,Neighborhood statistics,0
+4227,Neighborhood statistics,0
+4228,Neighborhood statistics,0
+4229,Edge detection filters,0
+4230,Neighborhood statistics,0
+4231,Edge detection filters,0
+4232,Raster spatial analysis and calculation,1
+4233,Edge detection filters,0
+4234,Neighborhood statistics,0
+4235,Data management,1
+4236,General management,0
+4237,General management,0
+4238,General management,0
+4239,General management,0
+4240,General management,0
+4241,General management,0
+4242,General management,0
+4243,General management,0
+4244,Data extraction,0
+4245,General management,0
+4246,Cell statistics,0
+4247,General management,0
+4248,Format conversion,0
+4249,Geometry,0
+4250,General management,0
+4251,General management,0
+4252,General management,0
+4253,General management,0
+4254,General management,0
+4255,General management,0
+4256,Data processing,1
+4257,Format conversion,0
+4258,General management,0
+4259,General management,0
+4260,Data processing,1
+4261,Cell statistics,0
+4262,General management,0
+4263,General management,0
+4264,General management,0
+4265,General management,0
+4266,Format conversion,0
+4267,General management,0
+4268,Data processing,1
+4269,Format conversion,0
+4270,Format conversion,0
+4271,General management,0
+4272,Statistics analysis,0
+4273,General management,0
+4274,Data extraction,0
+4275,General management,0
+4276,Data processing,1
+4277,General management,0
+4278,Format conversion,0
+4279,General management,0
+4280,Advanced image analysis,1
+4281,Deep learning-based classification,0
+4282,Statistics analysis,0
+4283,Data processing,1
+4284,Raster calculation,0
+4285,Raster calculation,0
+4286,Raster calculation,0
+4287,Format conversion,0
+4288,General management,0
+4289,Raster calculation,0
+4290,Raster calculation,0
+4291,Raster calculation,0
+4292,Format conversion,0
+4293,Format conversion,0
+4294,Format conversion,0
+4295,Format conversion,0
+4296,Format conversion,0
+4297,Reclassification,0
+4298,Raster calculation,0
+4299,Raster calculation,0
+4300,Reclassification,0
+4301,Raster calculation,0
+4302,Raster calculation,0
+4303,Raster calculation,0
+4304,Raster calculation,0
+4305,Data processing,1
+4306,Reclassification,0
+4307,Raster calculation,0
+4308,Raster calculation,0
+4309,Raster calculation,0
+4310,Raster calculation,0
+4311,General management,0
+4312,Raster calculation,0
+4313,Raster calculation,0
+4314,Format conversion,0
+4315,Raster calculation,0
+4316,Format conversion,0
+4317,Raster calculation,0
+4318,Format conversion,0
+4319,Raster calculation,0
+4320,Raster calculation,0
+4321,General management,0
+4322,Raster calculation,0
+4323,Raster calculation,0
+4324,Raster calculation,0
+4325,Reclassification,0
+4326,Reclassification,0
+4327,Format conversion,0
+4328,Data processing,1
+4329,Format conversion,0
+4330,Raster calculation,0
+4331,Raster calculation,0
+4332,Raster calculation,0
+4333,Raster calculation,0
+4334,Format conversion,0
+4335,Raster calculation,0
+4336,Raster calculation,0
+4337,Raster calculation,0
+4338,Raster calculation,0
+4339,Raster calculation,0
+4340,Format conversion,0
+4341,Format conversion,0
+4342,Reclassification,0
+4343,Raster calculation,0
+4344,Format conversion,0
+4345,Raster calculation,0
+4346,Raster calculation,0
+4347,Raster calculation,0
+4348,Format conversion,0
+4349,Reclassification,0
+4350,Raster calculation,0
+4351,Raster calculation,0
+4352,Raster calculation,0
+4353,Raster calculation,0
+4354,Raster calculation,0
+4355,Raster calculation,0
+4356,Raster calculation,0
+4357,Format conversion,0
+4358,Data processing,1
+4359,Format conversion,0
+4360,Format conversion,0
+4361,Format conversion,0
+4362,Format conversion,0
+4363,Data processing,1
+4364,Format conversion,0
+4365,Format conversion,0
+4366,Reclassification,0
+4367,Format conversion,0
+4368,Format conversion,0
+4369,Format conversion,0
+4370,Raster calculation,0
+4371,Format conversion,0
+4372,Format conversion,0
+4373,Format conversion,0
+4374,Raster calculation,0
+4375,Raster data management,0
+4376,Raster data management,0
+4377,Raster data management,0
+4378,Raster data management,0
+4379,Reclassification,0
+4380,Raster data management,0
+4381,Raster data management,0
+4382,Raster data management,0
+4383,Raster data management,0
+4384,Raster data management,0
+4385,Raster data management,0
+4386,Format conversion,0
+4387,Raster data management,0
+4388,Raster data management,0
+4389,Projection transforms,0
+4390,Projection transforms,0
+4391,Projection,1
+4392,Projection transforms,0
+4393,Projection transforms,0
+4394,Projection transforms,0
+4395,Projection transforms,0
+4396,Projection,1
+4397,Raster calculation,0
+4398,Raster calculation,0
+4399,Raster spatial analysis and calculation,1
+4400,Reclassification,0
+4401,Raster calculation,0
+4402,Statistical analysis,1
+4403,Statistical analysis,1
+4404,Statistical analysis,1
+4405,Statistical analysis,1
+4406,Statistical analysis,1
+4407,Cell statistics,0
+4408,Zonal statistics,0
+4409,Zonal statistics,0
+4410,Cell statistics,0
+4411,Statistical analysis,1
+4412,Statistical analysis,1
+4413,Data processing,1
+4414,Statistical analysis,1
+4415,Reclassification,0
+4416,Statistical analysis,1
+4417,Statistical analysis,1
+4418,Statistical analysis,1
+4419,Raster spatial analysis and calculation,1
+4420,Raster calculation,0
+4421,Zonal statistics,0
+4422,Statistical analysis,1
+4423,Statistics analysis,0
+4424,Statistical analysis,1
+4425,Statistical analysis,1
+4426,Statistical analysis,1
+4427,Correlation and association,0
+4428,Statistical analysis,1
+4429,Statistical analysis,1
+4430,Raster calculation,0
+4431,Correlation and association,0
+4432,Correlation and association,0
+4433,Raster calculation,0
+4434,Raster calculation,0
+4435,Raster calculation,0
+4436,Raster calculation,0
+4437,Cell statistics,0
+4438,Zonal statistics,0
+4439,Correlation and association,0
+4440,Zonal statistics,0
+4441,Raster calculation,0
+4442,Statistical analysis,1
+4443,Correlation and association,0
+4444,Correlation and association,0
+4445,Cell statistics,0
+4446,Cell statistics,0
+4447,Correlation and association,0
+4448,Statistical analysis,1
+4449,Statistical analysis,1
+4450,Correlation and association,0
+4451,Statistical analysis,1
+4452,Cell statistics,0
+4453,Cell statistics,0
+4454,General management,0
+4455,Statistical analysis,1
+4456,Statistical analysis,1
+4457,Cell statistics,0
+4458,General management,0
+4459,General management,0
+4460,General management,0
+4461,General management,0
+4462,Data export,0
+4463,Data import,0
+4464,General management,0
+4465,General management,0
+4466,General management,0
+4467,Format conversion,0
+4468,General management,0
+4469,Format conversion,0
+4470,Format conversion,0
+4471,Format conversion,0
+4472,Data export,0
+4473,General management,0
+4474,Format conversion,0
+4475,General management,0
+4476,Format conversion,0
+4477,Format conversion,0
+4478,Surface analysis,0
+4479,Raster spatial analysis and calculation,1
+4480,Surface analysis,0
+4481,Surface analysis,0
+4482,Surface analysis,0
+4483,Surface analysis,0
+4484,General management,1
+4485,General management,0
+4486,Cache management,0
+4487,Cache management,0
+4488,Cache management,0
+4489,General management,0
+4490,General management,0
+4491,Workspace organization,0
+4492,General management,0
+4493,Workspace organization,0
+4494,Workspace organization,0
+4495,Workspace organization,0
+4496,General management,0
+4497,Workspace organization,0
+4498,Workspace organization,0
+4499,Data export,0
+4500,Data export,0
+4501,Cartography,1
+4502,Cartography,1
+4503,Workspace organization,0
+4504,Data export,0
+4505,Data export,0
+4506,Data export,0
+4507,Visual expression,1
+4508,General management,0
+4509,Data import,0
+4510,Workspace organization,0
+4511,Vector data management,0
+4512,General management,0
+4513,General management,0
+4514,Data export,0
+4515,Data export,0
+4516,Data export,0
+4517,Workspace organization,0
+4518,Workspace organization,0
+4519,Cache management,0
+4520,Workspace organization,0
+4521,Workspace organization,0
+4522,Workspace organization,0
+4523,Data import,0
+4524,Data export,0
+4525,Data import,0
+4526,Workspace organization,0
+4527,Workspace organization,0
+4528,Cache management,0
+4529,General management,0
+4530,Data export,0
+4531,Data export,0
+4532,Data export,0
+4533,Data export,0
+4534,Data export,0
+4535,Data export,0
+4536,Data export,0
+4537,Data export,0
+4538,Data export,0
+4539,Data export,0
+4540,Data export,0
+4541,Data export,0

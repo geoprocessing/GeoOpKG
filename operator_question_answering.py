@@ -1,4 +1,4 @@
-import dashscope
+﻿import dashscope
 from http import HTTPStatus
 from dashscope import Generation
 import weaviate
@@ -10,36 +10,36 @@ import os
 from sentence_transformers import SentenceTransformer
 import torch
 import torch.nn as nn
-from torch_geometric.nn import RGCNConv  # 也可以换成 GATConv
+from torch_geometric.nn import RGCNConv  # Can also be replaced with GATConv
 from torch_geometric.data import Data
 from torch_geometric.utils import k_hop_subgraph
 import torch.nn.functional as F
 from collections import defaultdict
 from sentence_transformers import CrossEncoder
 
-# 自动检测 GPU 或 CPU
+# Auto-detect GPU or CPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# 在 import 之后、模型定义之前添加：
-projection_head = nn.Linear(384, 128).to(device)  # 将 384 维转为 128 维
+# Add after imports and before model definition:
+projection_head = nn.Linear(384, 128).to(device)  # Convert 384 dimensions to 128 dimensions
 
-# 请在运行前设置代理
+# Please set proxy before running
 os.environ['HTTP_PROXY'] = ''
 os.environ['HTTPS_PROXY'] = ''
 
-# 请在运行前设置 Dashscope API 密钥
+# Please set Dashscope API key before running
 dashscope.api_key = ""
 
 
-# 初始化 SentenceTransformer 模型
-model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+# Initialize SentenceTransformer model
+model = SentenceTransformer('')
 
-# 请设置Neo4j 连接信息
+# Please set Neo4j connection info
 uri = "bolt://localhost:7687"
 username = ""
 password = ""
 
-# Weaviate 连接信息
+# Weaviate connection info
 weaviate_client = weaviate.connect_to_local(
     host="localhost",
     port=8080,
@@ -48,7 +48,7 @@ weaviate_client = weaviate.connect_to_local(
 
 
 def call_turing_api(prompt):
-    """调用通义千问 API"""
+    """Call Tongyi Qianwen API"""
     messages = [
         {'role': 'system', 'content': 'You are a helpful assistant.'},
         {'role': 'user', 'content': prompt}
@@ -56,7 +56,7 @@ def call_turing_api(prompt):
 
     try:
         response = Generation.call(
-            model='qwen3-max-2025-09-23',  # 根据需要选择模型版本
+            model='qwen3-max-2026-01-23',  # Select model version as needed
             messages=messages,
             result_format='message'
         )
@@ -75,15 +75,15 @@ def safe_str(value):
     if isinstance(value, str):
         return value
     if isinstance(value, (int, float)):
-        # 避免 NaN
+        # Avoid NaN
         if str(value).lower() in ('nan', 'inf', '-inf'):
             return ""
         return str(value)
     return str(value)
 
-##意图识别
+## Intent Recognition
 def classify_intent_with_llm(text):
-    """通过调用通义千问 API 提取潜在的实体并存储在列表中"""
+    """Call Tongyi Qianwen API to extract potential entities and store them in a list"""
     prompt = (
         f"You are an expert in the GIS domain. Based on the following question, determine its intent category.\n"
         f"Available categories:\n"
@@ -99,48 +99,49 @@ def classify_intent_with_llm(text):
 
     result = call_turing_api(prompt)
     intent = result.strip().upper()
-    if intent not in ["已知算子类别","未知算子类别","相似算子问题"]:
-        result=call_turing_api()
-        intent=result.strip().upper()
+    if intent not in ["KNOWN OPERATOR","UNKNOWN OPERATOR","SIMILAR OPERATOR"]:
+        result = call_turing_api(prompt)
+        intent = result.strip().upper()
     return intent
 
 
-##提取实体
+## Extract Entities
 def extract_entities_with_turing(text):
-    """通过调用通义千问 API 提取潜在的实体并存储在列表中"""
+    """Call Tongyi Qianwen API to extract potential entities and store them in a list"""
     prompt = (
         f"You are an expert in the GIS domain. Please extract the GIS operator names from the following user question:\n"
         f"{text}\n\n"
         f"Requirements:\n"
         f"- Only extract operator names explicitly mentioned in the question (e.g., Buffer, Clip, Dissolve). Ignore software names, parameters, and task descriptions.\n"
         f"- If there are spelling errors, automatically correct them to the standard operator names (e.g., 'bufffer' → 'Buffer').\n"
+        f"- Operator names must be extracted completely (e.g., ee.Image.reduceRegion, Cost Path).\n"
         f"- Separate operator names using only commas (,). Do not add numbering, explanations, or any extra punctuation.\n"
         f"- If no operator name is mentioned in the question, do not infer or analyze; output exactly: None\n"
     )
 
     result = call_turing_api(prompt)
     if result:
-        # 将提取的实体按行分割，存入列表
+        # Split the extracted entities and store in a list
         entities = [entity.strip() for entity in result.split(',') if entity.strip()]
         return entities
     return []
 
 
-##实体消岐
-# 向量查询函数：根据输入文本找到最相似的实体
+## Entity Disambiguation
+# Vector query function: find the most similar entities based on input text
 def find_similar_entity(query_text,top_k=3):
     query_vector = model.encode(query_text).tolist()
 
-    #选择集合
+    # Select collection
     questions = weaviate_client.collections.get("VectorData")
-    #向量检索
+    # Vector retrieval
     response = questions.query.near_vector(
         near_vector= query_vector,
         limit=top_k,
         return_metadata=wvc.query.MetadataQuery(certainty=True)
     )
 
-    # 4. 解析结果（新版返回的结构和 v3 不一样）
+    # 4. Parse results (new version returns a different structure than v3)
     results = []
     for obj in response.objects:
         name = obj.properties.get("name", "")
@@ -149,30 +150,30 @@ def find_similar_entity(query_text,top_k=3):
         if name:
             results.append((name, label, certainty))
 
-    # 按 certainty 排序（可选，Weaviate 默认已排序）
+    # Sort by certainty (optional, Weaviate is default sorted)
     results.sort(key=lambda x: x[2] if x[2] is not None else 0, reverse=True)
 
-    # 返回前 top_k 个，只保留 name 和 label
-    return [(res[0], res[1]) for res in results[:top_k]]  # 👈 返回多个！
+    # Return top_k, keep only name and label
+    return [(res[0], res[1]) for res in results[:top_k]]  # 👈 Return multiple!
 
 
 def disambiguate_entities(entities):
-    """消歧实体列表中的每个实体"""
+    """Disambiguate each entity in the entity list"""
     seen=set()
     disambiguated_results = []
     for entity in entities:
         #print(f"entity:",entity)
-        # 找到最相似的实体
+        # Find the most similar entity
         best_matches = find_similar_entity(entity,top_k=3)
         if not best_matches:
-            # 如果没有匹配，保留原始实体（但 label 为空）
+            # If no match, keep original entity (but label is empty)
             fallback = (entity.strip(), "")
             key = (fallback[0].lower(), fallback[1].lower())
             if key not in seen:
                 seen.add(key)
                 disambiguated_results.append(fallback)
         else:
-            # 遍历 top_k 结果，取第一个未见过的
+            # Iterate through top_k results, take the first unseen one
             added = False
             for name, label in best_matches:
                 name_clean = name.strip()
@@ -182,17 +183,17 @@ def disambiguate_entities(entities):
                     seen.add(key)
                     disambiguated_results.append((name_clean, label_clean))
                     added = True
-                    break  # 只取第一个未重复的高置信结果
+                    break  # Only take the first non-repeated high confidence result
             if not added:
-                # 所有 top_k 都重复了？那就跳过（或可选 fallback）
+                # All top_k are repeated? Skip (or optional fallback)
                 pass
 
     return disambiguated_results
 
 
-##用户问题解读
+## User Question Interpretation
 def rewrite_user_question(text):
-    """将用户问题改写为聚焦 GIS 底层操作的标准描述句"""
+    """Rewrite user question into a standard descriptive sentence focusing on underlying GIS operations"""
     prompt = (
         f"You are a professional expert in the GIS domain. Please rewrite the following user question into a single sentence that describes a **specific GIS operation or operator function**.\n"
         f"This rewritten sentence will be used to match GIS tools (e.g., ArcGIS/QGIS operators).\n"
@@ -209,15 +210,15 @@ def rewrite_user_question(text):
     if result and not result.startswith("Error"):
         return result.strip()
     else:
-        # fallback：直接返回原问题
+        # fallback: return original question directly
         print("⚠️ Rewrite failed, using the original question.")
         return text
 
-##粗筛算子
+## Coarse Filter Operators
 def query_prompt_desc_collection(rewritten_question, top_k=30):
     """
-    在 Weaviate 的 Prompt_Desc 集合中查询与改写后问题最相似的算子名称
-    返回: [(name1, "Operation"), (name2, "Operation"), ...]
+    Query the most similar operator names to the rewritten question in Weaviate's Prompt_Desc collection
+    Return: [(name1, "Operation"), (name2, "Operation"), ...]
     """
     query_vector = model.encode(rewritten_question).tolist()
 
@@ -235,20 +236,20 @@ def query_prompt_desc_collection(rewritten_question, top_k=30):
         if name:
             results.append(name)
 
-    # === 消岐 + 去重 ===
+    # === Disambiguate + Deduplicate ===
     seen = set()
     cleaned_entities = []
     for name in results:
         if name not in seen:
             seen.add(name)
-            cleaned_entities.append((name, "Operation"))  # 👈 改为元组
+            cleaned_entities.append((name, "Operation"))  # 👈 Change to tuple
 
-    #print(f"🎯 向量检索到 {len(results)} 个原始候选，消岐后保留 {len(cleaned_entities)} 个: {[n for n, _ in cleaned_entities[:5]]}")
+    #print(f"🎯 Vector retrieval found {len(results)} raw candidates, after disambiguation kept {len(cleaned_entities)}: {[n for n, _ in cleaned_entities[:5]]}")
     return cleaned_entities  # List[Tuple[str, str]]
 
 
 
-# 1. 定义 GNN 模型
+# 1. Define GNN model
 class RGCNEncoder(nn.Module):
     def __init__(self, in_dim, hidden_dim, out_dim, num_relations):
         super().__init__()
@@ -265,16 +266,16 @@ class RGCNEncoder(nn.Module):
 
 def encode_node_features_complete(node):
     """
-    将异构节点属性拼接为统一文本，用于向量化。
-    支持不同节点具有不同属性。
+    Concatenate heterogeneous node attributes into a unified text for vectorization.
+    Supports different nodes having different attributes.
     """
     parts = []
 
-    # 1. 主标识（Title 或 Name）
+    # 1. Main identifier (Title or Name)
     main_id = node.get("Title") or node.get("Name") or "Unknown"
     parts.append(f"Name: {main_id}")
 
-    # 2. 节点类型（从 Labels 提取第一个作为类型）
+    # 2. Node type (Extract the first from Labels as type)
     node_type = "Unknown"
     labels = node.get("Labels", [])
     if isinstance(labels, list) and len(labels) > 0:
@@ -283,42 +284,42 @@ def encode_node_features_complete(node):
         node_type = labels
     parts.append(f"Type: {node_type}")
 
-    # 3. 按优先级添加常用属性（固定顺序）
+    # 3. Add common attributes by priority (fixed order)
     for key in ["Description", "DataType", "Version"]:
         val = node.get(key)
         if val and isinstance(val, str) and val.strip():
             parts.append(f"{key}: {val.strip()}")
 
-    # 4. 其他属性（排除已处理的）
+    # 4. Other attributes (exclude already processed ones)
     exclude_keys = {"Title", "Name", "Description", "DataType", "Version", "Labels"}
     for key, val in node.items():
         if key in exclude_keys:
             continue
         if not val:
             continue
-        # 转为字符串
+        # Convert to string
         if isinstance(val, (list, dict, set)):
             val = str(val)
         if isinstance(val, str) and val.strip():
             parts.append(f"{key}: {val.strip()}")
 
-    # 5. 拼接 + 截断（SentenceTransformer 默认支持512 tokens，约2000字符）
+    # 5. Concatenate + Truncate (SentenceTransformer supports 512 tokens by default, approx 2000 characters)
     text = ". ".join(parts)
     if len(text) > 1500:
         text = text[:1497] + "..."
     return text
 
 
-#全图GNN编码
+# Full graph GNN encoding
 def load_full_graph_from_neo4j():
-    """获取整个知识图谱"""
+    """Get entire Knowledge Graph"""
     driver = GraphDatabase.driver(uri, auth=(username, password))
     nodes, edges, edge_types = [], [], []
     node2id, rel2id = {}, {}
-    operation_indices = []  # 👈 新增：存储所有 Operation 节点在 nodes 列表中的索引
+    operation_indices = []  # 👈 Added: store indices of all Operation nodes in the nodes list
 
     with driver.session() as session:
-        # 获取节点
+        # Get nodes
         result = session.run("MATCH (n) RETURN id(n) as id, n as props, labels(n) as labels")
         for record in result:
             nid = record["id"]
@@ -327,15 +328,15 @@ def load_full_graph_from_neo4j():
             node2id[nid] = len(nodes)
             nodes.append(props)
 
-            # 👇 关键：判断是否为 Operation 类型（根据标签）
-            # 假设 Operation 节点的 label 是 'Operation' 或包含 'Operation'
+            # 👇 Key: check if it is of Operation type (based on labels)
+            # Assume the label of Operation node is Operation or contains Operation
             if "Operation" in record["labels"]:
-                operation_indices.append(len(nodes))  # 记录该节点在 nodes 中的位置
+                operation_indices.append(len(nodes))  # Record the position of the node in nodes
 
             node2id[nid] = len(nodes)
             nodes.append(props)
 
-        # 获取边
+        # Get edges
         result = session.run("MATCH (n)-[r]->(m) RETURN id(n) as src, id(m) as dst, type(r) as rel")
         for record in result:
             src_id = node2id.get(record["src"])
@@ -349,8 +350,8 @@ def load_full_graph_from_neo4j():
 
     driver.close()
 
-    # 构建 PyG Data
-    # 节点特征编码
+    # Build PyG Data
+    # Node feature encoding
     texts = [encode_node_features_complete(n) for n in nodes]
     x = torch.tensor(model.encode(texts), dtype=torch.float)
 
@@ -361,20 +362,20 @@ def load_full_graph_from_neo4j():
     data.orig_edge_index = edge_index
     data.orig_edge_type = edge_type
     data.rel2id = rel2id
-    data.operation_indices = torch.tensor(operation_indices, dtype=torch.long)  # 👈 保存 Operation 节点索引
+    data.operation_indices = torch.tensor(operation_indices, dtype=torch.long)  # 👈 Save Operation node index
 
     rel_num = len(rel2id)
-    #print(f"📊 全图节点数={len(nodes)}, 边数={len(edges)}, 关系类型数={len(rel2id)}")
+    #print(f"📊 Full graph nodes={len(nodes)}, edges={len(edges)}, rel_types={len(rel2id)}")
     return data, nodes, rel_num
 
 
 
-#子图编码
+# Subgraph encoding
 def load_subgraph_complete(entity_tuples: list, hops=4):
     """
-    加载围绕种子实体的子图（修复路径边错误）
+    Load subgraph around seed entities (fix path edge error)
     entity_tuples: [(name, label), ...]
-    hops: 子图跳数
+    hops: Subgraph hops
     """
     if not entity_tuples:
         return None, [], 0, [], {}
@@ -389,7 +390,7 @@ def load_subgraph_complete(entity_tuples: list, hops=4):
             names = [e[0] for e in entity_tuples]
             lower_titles = [t.lower() for t in names]
 
-            # ✅ 修复：拆解路径中的每一条边
+            # ✅ Fix: extract each edge in the path
             query = f"""
             MATCH path = (n)-[r*1..{hops}]->(m)
             WHERE any(key IN ['Title','Name'] WHERE n[key] IS NOT NULL AND toLower(n[key]) IN $lower_titles)
@@ -406,7 +407,7 @@ def load_subgraph_complete(entity_tuples: list, hops=4):
                 dst_node = record["dst"]
                 rel = record["rel"]
 
-                # 源节点
+                # Source node
                 src_props = dict(src_node)
                 src_props["Labels"] = list(src_node.labels)
                 src_eid = src_node.element_id
@@ -414,7 +415,7 @@ def load_subgraph_complete(entity_tuples: list, hops=4):
                     node2id[src_eid] = len(nodes)
                     nodes.append(src_props)
 
-                # 目标节点
+                # Target node
                 dst_props = dict(dst_node)
                 dst_props["Labels"] = list(dst_node.labels)
                 dst_eid = dst_node.element_id
@@ -422,7 +423,7 @@ def load_subgraph_complete(entity_tuples: list, hops=4):
                     node2id[dst_eid] = len(nodes)
                     nodes.append(dst_props)
 
-                # 边
+                # Edges
                 rel_type = rel.type
                 if rel_type not in rel2id:
                     rel2id[rel_type] = len(rel2id)
@@ -437,28 +438,28 @@ def load_subgraph_complete(entity_tuples: list, hops=4):
     finally:
         driver.close()
 
-    # 节点特征编码
+    # Node feature encoding
     texts = [encode_node_features_complete(n) for n in nodes]
     x = torch.tensor(model.encode(texts), dtype=torch.float).to(device)
 
-    # 原始有向边，用于 GNN forward
+    # Original directed edge, used for GNN forward
     edge_index = torch.tensor(edges, dtype=torch.long).t().contiguous().to(device)
     edge_type = torch.tensor(edge_types, dtype=torch.long).to(device)
 
-    # 构造 Data（移除未使用的双向边，避免混淆）
+    # Build Data (remove unused bidirectional edges to avoid confusion)
     data = Data(x=x, edge_index=edge_index, edge_type=edge_type)
     data.orig_edge_index = torch.tensor(edges, dtype=torch.long).t().contiguous()
     data.orig_edge_type = torch.tensor(edge_types, dtype=torch.long)
     data.rel2id = rel2id
 
     rel_num = len(rel2id)
-    #print(f"📊 子图节点数={len(nodes)}, 边数={len(edges)}, 关系类型数={rel_num}")
+    #print(f"📊 Subgraph nodes={len(nodes)}, edges={len(edges)}, rel_types={rel_num}")
 
     return data, nodes, rel_num, triples, rel2id
 
 def load_undirected_subgraph(entity_tuples: list, hops=4):
     """
-    专为方法三设计：加载无向子图，用于查找同算法类别下的其他算子。
+    Designed for method 3: extract undirected subgraph to find other operators under the same algorithm category.
     """
     if not entity_tuples:
         return None, [], 0, [], {}
@@ -472,7 +473,7 @@ def load_undirected_subgraph(entity_tuples: list, hops=4):
         with driver.session() as session:
             names = [e[0] for e in entity_tuples]
 
-            # ✅ 关键修改：使用无向路径 -(r*1..{hops})-
+            # ✅ Key change: use undirected path -(r*1..{hops})-
             query = f"""
             MATCH (n)
             WHERE any(key IN ['Title','Name'] WHERE n[key] IN $titles)
@@ -516,7 +517,7 @@ def load_undirected_subgraph(entity_tuples: list, hops=4):
     finally:
         driver.close()
 
-    # 编码节点特征（与原函数一致）
+    # Encode node features (consistent with original function)
     texts = [encode_node_features_complete(n) for n in nodes]
     x = torch.tensor(model.encode(texts), dtype=torch.float).to(device)
 
@@ -529,12 +530,12 @@ def load_undirected_subgraph(entity_tuples: list, hops=4):
     data.rel2id = rel2id
 
     rel_num = len(rel2id)
-    #print(f"📊 无向子图节点数={len(nodes)}, 边数={len(edges)}, 关系类型数={rel_num}")
+    #print(f"📊 Undirected subgraph nodes={len(nodes)}, edges={len(edges)}, rel_types={rel_num}")
     return data, nodes, rel_num, triples, rel2id
 
 def build_edges_with_relation_names(edge_index, edge_type, rel2id):
     """
-    将 edge_index + edge_type 转为 (src, dst, rel_name) 列表
+    Convert edge_index + edge_type to list of (src, dst, rel_name)
     """
     edge_index = edge_index.cpu().numpy()
     edge_type = edge_type.cpu().numpy()
@@ -552,16 +553,16 @@ def build_edges_with_relation_names(edge_index, edge_type, rel2id):
 def collect_reachable_nodes_with_relations(
     subgraph_data,
     subgraph_nodes,
-    seed_idx,          # ← 改为传入索引，而非名称
+    seed_idx,          # ← Changed to passing index, rather than name
     max_hops=4
 ):
     """
-    从 seed_idx 开始 BFS 扩展
+    BFS expansion starting from seed_idx
     """
     if seed_idx < 0 or seed_idx >= len(subgraph_nodes):
         return []
 
-    # 构建邻接表（只出边）
+    # Build adjacency list (out-edges only)
     edge_index = subgraph_data.orig_edge_index.cpu().numpy()
     edge_type = subgraph_data.orig_edge_type.cpu().numpy()
     id2rel = {v: k for k, v in subgraph_data.rel2id.items()}
@@ -608,19 +609,19 @@ def collect_reachable_nodes_with_relations(
     return results
 
 
-#已知算子问题
+# Known Operator Questions
 def method1_readout_subgraph(data: Data, nodes: list, seed_entities: list,gnn_model, hops=4):
     """
-    针对“已知算子问题”
-    方法一：支持完全重名节点（Title + Label 都相同）
-    - 用节点索引 idx 唯一标识
-    - 注入 __source__ 便于下游区分
+    Targeting "Known Operator Questions"
+    Method 1: Support completely duplicate named nodes (both Title + Label identical)
+    - Use node index idx for unique identification
+    - Inject __source__ for downstream distinction
     """
     gnn_model.eval()
     with torch.no_grad():
-        node_embeddings = gnn_model(data.x, data.orig_edge_index, data.orig_edge_type)
+        node_embeddings = gnn_model(data.x, data.edge_index, data.edge_type)
 
-    # 1️⃣ 找所有匹配节点（不 break，支持完全重名）
+    # 1️⃣ Find all matched nodes (no break, support duplicate names)
     seed_indices = []
     seed_names=[]
     for name, label in seed_entities:
@@ -628,14 +629,14 @@ def method1_readout_subgraph(data: Data, nodes: list, seed_entities: list,gnn_mo
             title_match = (node.get("Title") or "").strip().lower() == name.strip().lower()
             name_match  = (node.get("Name")  or "").strip().lower() == name.strip().lower()
             if title_match or name_match:
-                seed_indices.append(idx)  # 👈 用 idx 区分重名节点！
+                seed_indices.append(idx)  # 👈 Use idx to distinguish duplicate names!
                 seed_names.append(name)
 
     if not seed_indices:
         print("⚠️ Seed node not found in the subgraph!")
         return torch.empty(0,256), [], [],[],[]
 
-    # 构建邻接表用于 GNN readout（多跳）
+    # Build adjacency list for GNN readout (multi-hop)
     edge_index_np = data.orig_edge_index.cpu().numpy()
     edge_type_np = data.orig_edge_type.cpu().numpy()
     neighbors_dict = {i: set() for i in range(len(nodes))}
@@ -644,10 +645,10 @@ def method1_readout_subgraph(data: Data, nodes: list, seed_entities: list,gnn_mo
         rel_type = edge_type_np[i]
         neighbors_dict[src].add((dst, rel_type))
 
-    # 3️⃣ 对每个 seed 节点进行有向扩展
+    # 3️⃣ Directed expansion for each seed node
     candidates_embeddings = []
     candidates_nodes = []
-    all_reachable_info_list = []  # 新增
+    all_reachable_info_list = []  # Added
 
     for idx in seed_indices:
         visited = set([idx])
@@ -667,7 +668,7 @@ def method1_readout_subgraph(data: Data, nodes: list, seed_entities: list,gnn_mo
         final_emb = torch.cat([node_embeddings[idx], neighbor_emb], dim=0)
         candidates_embeddings.append(final_emb)
 
-        # 👇 注入区分信息
+        # 👇 Inject distinguishing info
         node_copy = {**nodes[idx]}
         node_copy["__source__"] = (
             node_copy.get("Software") or
@@ -677,40 +678,40 @@ def method1_readout_subgraph(data: Data, nodes: list, seed_entities: list,gnn_mo
             "Unknown"
         )
         candidates_nodes.append(node_copy)
-        # ✅ 收集有向4跳内所有可达节点（带路径）
+        # ✅ Collect all reachable nodes within 4 directed hops (with paths)
         reachable_info = collect_reachable_nodes_with_relations(data, nodes, idx, max_hops=4)
         all_reachable_info_list.append(reachable_info)
     return candidates_embeddings, candidates_nodes, [], all_reachable_info_list, []
 
 
-# 全局加载 cross-encoder（只加载一次）
+# Global load cross-encoder (load only once)
 _cross_encoder = None
 
 def get_cross_encoder():
     global _cross_encoder
     if _cross_encoder is None:
-        #print("🔄 加载 Cross-Encoder 模型...")
+        #print("🔄 Loading Cross-Encoder model...")
         _cross_encoder = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
     return _cross_encoder
 
 
-#未知算子问题
+# Unknown Operator Question
 def method2_rerank_by_cross_gnn(seed_entities: list, rewritten_question: str, top_k: int = 10, subgraph_hops: int = 4):
     """
-    一次性加载大子图，确保所有同名算子都被包含
-    - 使用 Cross-Encoder 精排（替代门控融合）
-    - 输入格式与第一段代码一致：seed_entities = [(name, "Operation"), ...]
+    Load large subgraph at once to ensure all operators with the same name are included
+    - Use Cross-Encoder for fine ranking (replace gated fusion)
+    - Input format is consistent with the first block code
     """
     if not seed_entities:
         return []
 
-    # 1. 提取唯一算子名称
+    # 1. Extract unique operator names
     unique_names = list({name for name, _ in seed_entities})
-    unique_names_lower = {name.strip().lower() for name in unique_names}  # 👈 小写集合
-    #print("小写集合",unique_names_lower)
+    unique_names_lower = {name.strip().lower() for name in unique_names}  # 👈 Lowercase set
+    #print("Lowercase set",unique_names_lower)
 
 
-    # 2. 一次性加载包含所有候选的大子图
+    # 2. Load large subgraph containing all candidates at once
     entity_tuples = [(name, "Operation") for name in unique_names]
     try:
         data, nodes, rel_num, _, rel2id = load_subgraph_complete(entity_tuples, hops=subgraph_hops)
@@ -720,7 +721,7 @@ def method2_rerank_by_cross_gnn(seed_entities: list, rewritten_question: str, to
         print(f"⚠️ Failed to load the large subgraph: {e}")
         return []
 
-    # 3. GNN 编码（全局，可用于辅助生成描述，或保留流程一致性）
+    # 3. GNN encoding (global, can assist generating descriptions)
     gnn_model = RGCNEncoder(
         in_dim=data.x.size(1),
         hidden_dim=256,
@@ -729,9 +730,9 @@ def method2_rerank_by_cross_gnn(seed_entities: list, rewritten_question: str, to
     ).to(device)
     gnn_model.eval()
     with torch.no_grad():
-        node_embeddings = gnn_model(data.x, data.orig_edge_index, data.orig_edge_type)
+        node_embeddings = gnn_model(data.x, data.edge_index, data.edge_type)
 
-    # 4. 构建邻接表（带关系类型，用于辅助生成描述或调试）
+    # 4. Build adjacency list (with relation types, for debugging)
     edge_index_np = data.orig_edge_index.cpu().numpy()
     edge_type_np = data.orig_edge_type.cpu().numpy()
     id2rel = {v: k for k, v in rel2id.items()}
@@ -742,8 +743,8 @@ def method2_rerank_by_cross_gnn(seed_entities: list, rewritten_question: str, to
         rel_name = id2rel.get(rel_id, "UNKNOWN")
         adj_out[src].append((dst, rel_name))
 
-    # 5. 收集所有 Operation 节点实例（包括同名多个）
-    candidates = []  # 每个元素：{"op_name": str, "desc_text": str, "node": dict}
+    # 5. Collect all Operation node instances (including duplicates)
+    candidates = []  # Each element: {"op_name": str, "desc_text": str, "node": dict}
 
 
 
@@ -759,10 +760,10 @@ def method2_rerank_by_cross_gnn(seed_entities: list, rewritten_question: str, to
         if node_name.lower() not in unique_names_lower:
             continue
 
-        # === 生成自然语言描述（关键：每个实例独立）===
+        # === Generate Natural Language Description (Key: Each instance is independent) ===
         base_desc = encode_node_features_complete(node)
 
-        # === 动态收集关联信息 ===
+        # === Dynamically Collect Associated Information ===
         software_names = []
 
         for nbr_idx, rel_name in adj_out.get(idx, []):
@@ -771,20 +772,20 @@ def method2_rerank_by_cross_gnn(seed_entities: list, rewritten_question: str, to
             if isinstance(nbr_labels, str):
                 nbr_labels = [nbr_labels]
 
-            # 收集 Software 信息
+            # Collect Software Info
             elif rel_name == "ImplementedIn" and "Software" in nbr_labels:
                 soft_name = nbr_node.get("Name") or nbr_node.get("Title") or "Unknown"
                 software_names.append(soft_name)
 
-        # === 拼接增强描述 ===
+        # === Concatenate Enhanced Description ===
         enhanced_parts = [base_desc]
         if software_names:
             enhanced_parts.append("Implemented in: " + ", ".join(software_names))
 
         desc_text = ". ".join(enhanced_parts)
 
-        # 调试打印
-        # print(f"🔍 Cross-Encoder 候选: 算子='{node_name}', ID={idx}, 软件={software_names}")
+        # Debug print
+        # print(f"🔍 Cross-Encoder candidates: Op='{node_name}', ID={idx}, Software={software_names}")
 
         candidates.append({
             "op_name": node_name,
@@ -795,7 +796,7 @@ def method2_rerank_by_cross_gnn(seed_entities: list, rewritten_question: str, to
     if not candidates:
         return []
 
-    # 6. Cross-Encoder 精排
+    # 6. Cross-Encoder Fine-Ranking
     cross_encoder = get_cross_encoder()
     pairs = [(rewritten_question, cand["desc_text"]) for cand in candidates]
     try:
@@ -805,40 +806,40 @@ def method2_rerank_by_cross_gnn(seed_entities: list, rewritten_question: str, to
         import numpy as np
         cross_scores = np.random.rand(len(candidates))
 
-    # 绑定分数
+    # Bind scores
     for i, score in enumerate(cross_scores):
         candidates[i]["similarity"] = float(score)
 
-    # 7. 按算子名称分组，保留最高分实例
+    # 7. Group by operator name, keep the highest score instance
     best_per_op = defaultdict(lambda: {"score": -1e9, "candidate": None})
     for cand in candidates:
         op_name = cand["op_name"]
         if cand["similarity"] > best_per_op[op_name]["score"]:
             best_per_op[op_name] = {"score": cand["similarity"], "candidate": cand}
 
-    # 8. 排序并返回 top-k
+    # 8. Sort and return top-k
     sorted_items = sorted(best_per_op.values(), key=lambda x: x["score"], reverse=True)[:top_k]
     result_entities = [(item["candidate"]["op_name"], "Operation") for item in sorted_items]
 
-    #print(f"🎯 Cross-Encoder 精排后 Top-{len(result_entities)} 算子: {[name for name, _ in result_entities]}")
+    #print(f"🎯 Top-{len(result_entities)} after Cross-Encoder sorting: {[name for name, _ in result_entities]}")
     return result_entities
 
-#相似算子问题
+# Similar Operator Questions
 def method3_topk_candidates_with_neighbors(data: Data, nodes: list, seed_entities: list, gnn_model, top_k=12):
     """
-    方法三（带精排）：
-    1. 通过 hasPlan → Algorithm 获取候选算子
-    2. 用 GNN 嵌入计算与 seed 的相似度
-    3. 返回 top_k 个最相似的候选实体列表 [(name, label), ...]
+    Method 3 (with fine-ranking):
+    1. Get candidate operators via hasPlan → Algorithm
+    2. Calculate similarity with seed using GNN embedding
+    3. Return top_k most similar candidate entities [(name, label), ...]
     """
     from collections import defaultdict
     import torch.nn.functional as F
 
     gnn_model.eval()
     with torch.no_grad():
-        node_embeddings = gnn_model(data.x, data.orig_edge_index, data.orig_edge_type)
+        node_embeddings = gnn_model(data.x, data.edge_index, data.edge_type)
 
-    # 1. 找 seed 节点
+    # 1. Find seed nodes
     seed_indices = []
     for name, label in seed_entities:
         name_clean = name.strip().lower()
@@ -852,7 +853,7 @@ def method3_topk_candidates_with_neighbors(data: Data, nodes: list, seed_entitie
         print("⚠️ Seed operator not found.")
         return []
 
-    # 2. 构建邻接表和 Algorithm 映射
+    # 2. Build adjacency list and Algorithm mapping
     edge_index_np = data.orig_edge_index.cpu().numpy()
     edge_type_np = data.orig_edge_type.cpu().numpy()
     id2rel = {v: k for k, v in data.rel2id.items()}
@@ -871,11 +872,11 @@ def method3_topk_candidates_with_neighbors(data: Data, nodes: list, seed_entitie
         if "Operation" not in labels:
             continue
         for nbr_idx, rel in adj_out.get(idx, []):
-            if rel == "hasPlan":  # ← 确保关系名正确
+            if rel == "hasPlan":  # ← Ensure relationship name is correct
                 algorithm_to_ops[nbr_idx].append(idx)
                 op_to_algorithms[idx].append(nbr_idx)
 
-    # 3. 收集所有候选（避免重复）
+    # 3. Collect all candidates (avoid duplicates)
     candidate_set = set()
     for seed_idx in seed_indices:
         seed_algos = op_to_algorithms.get(seed_idx, [])
@@ -888,9 +889,9 @@ def method3_topk_candidates_with_neighbors(data: Data, nodes: list, seed_entitie
         print("⚠️ No operators of the same category found.")
         return []
 
-    #print(f"🔍 找到 {len(candidate_set)} 个候选算子，正在计算相似度...")
+    #print(f"🔍 Found {len(candidate_set)} candidate operators, calculating similarity...")
 
-    # 4. 计算每个 seed 与所有候选的相似度（取最大值）
+    # 4. Calculate similarity between each seed and all candidates (take max)
     candidate_scores = defaultdict(float)  # cand_idx -> max_similarity
     for seed_idx in seed_indices:
         seed_emb = node_embeddings[seed_idx].unsqueeze(0)  # [1, D]
@@ -899,17 +900,17 @@ def method3_topk_candidates_with_neighbors(data: Data, nodes: list, seed_entitie
         sims = F.cosine_similarity(seed_emb, candidate_embs)  # [M]
 
         for i, cand_idx in enumerate(candidate_indices):
-            # 保留最高相似度（多个 seed 时）
+            # Keep highest similarity (for multiple seeds)
             candidate_scores[cand_idx] = max(candidate_scores[cand_idx], sims[i].item())
 
-    # 5. 按相似度排序，取 top_k
+    # 5. Sort by similarity, take top_k
     sorted_candidates = sorted(
         candidate_scores.items(),
         key=lambda x: x[1],
         reverse=True
     )[:top_k]
 
-    # 6. 转为实体列表 [(name, label), ...]
+    # 6. Convert to entity list [(name, label), ...]
     seen_entities = set()
     result_entities = []
     for cand_idx, sim_score in sorted_candidates:
@@ -924,23 +925,23 @@ def method3_topk_candidates_with_neighbors(data: Data, nodes: list, seed_entitie
             result_entities.append(entity_key)
 
 
-    #print(f"🎯 精排后 Top-{len(result_entities)} 候选: {result_entities}")
+    #print(f"🎯 Top-{len(result_entities)} candidates after fine-ranking: {result_entities}")
     return result_entities
 
 
 def process_text(text):
     # ========================
-    # 1️⃣ 提取意图（带重试和 fallback）
+    # 1️⃣ Extract intent (with retry and fallback)
     # ========================
     intent = classify_intent_with_llm(text)
-    #print("🔍 初始意图识别结果:", intent)
+    #print("🔍 Initial intent recognition result:", intent)
 
-    VALID_INTENTS = {"Known Operator", "Unknown Operator", "Similar Operator"}
+    VALID_INTENTS = {"KNOWN OPERATOR", "UNKNOWN OPERATOR", "SIMILAR OPERATOR"}
     if intent not in VALID_INTENTS:
-        #print("⚠️ 意图识别无效，重试一次...")
+        #print("⚠️ Intent recognition invalid, retrying once...")
         intent = classify_intent_with_llm(text)
         if intent not in VALID_INTENTS:
-            intent = "Known Operator"
+            intent = "KNOWN OPERATOR"
             print(f"❌ Still invalid; using the default intent. {intent}")
         else:
             print("✅ Retry successful; intent:", intent)
@@ -948,15 +949,15 @@ def process_text(text):
         print("✅ Intent recognition successful:", intent)
 
     # ========================
-    # 2️⃣ 根据意图分支处理
+    # 2️⃣ Branch processing based on intent
     # ========================
     try:
-        if intent == "Known Operator":
-            #print("\n📌 处理「已知算子类别」：提取并消歧实体...")
+        if intent == "KNOWN OPERATOR":
+            #print("📌 Processing [Known Operator]: extracting and disambiguating entities...")
             entities = extract_entities_with_turing(text)
-            #print("提取的实体列表:", entities)
+            #print("Extracted entities list:", entities)
             disambiguated_entities = disambiguate_entities(entities)
-            #print("消歧的实体列表:", disambiguated_entities)
+            #print("Disambiguated entities list:", disambiguated_entities)
             entity_tuples = [
                 (e[0].strip(), e[1]) for e in disambiguated_entities
                 if isinstance(e, (list, tuple)) and len(e) >= 2 and e[0].strip()
@@ -964,19 +965,19 @@ def process_text(text):
             if not entity_tuples:
                 raise ValueError("No valid entities extracted.")
 
-            # 加载子图并执行方法一
+            # Load subgraph and execute method 1
             data, nodes, rel_num, triples, rel2id = load_subgraph_complete(entity_tuples, hops=2)
             gnn_model = RGCNEncoder(in_dim=data.x.size(1), hidden_dim=256, out_dim=128, num_relations=rel_num).to(
                 device)
             result = method1_readout_subgraph(data, nodes, entity_tuples, gnn_model, hops=4)
             candidates_embeddings, candidates_nodes, _, all_reachable_info, _ = result
 
-        elif intent == "Similar Operator":
-            #print("\n📌 处理「相似算子问题」：提取并消歧实体...")
+        elif intent == "SIMILAR OPERATOR":
+            #print("📌 Processing [Similar Operator]: extracting and disambiguating entities...")
             entities = extract_entities_with_turing(text)
-            #print("提取的实体列表:", entities)
+            #print("Extracted entities list:", entities)
             disambiguated_entities = disambiguate_entities(entities)
-            #print("消歧的实体列表:", disambiguated_entities)
+            #print("Disambiguated entities list:", disambiguated_entities)
             entity_tuples = [
                 (e[0].strip(), e[1]) for e in disambiguated_entities
                 if isinstance(e, (list, tuple)) and len(e) >= 2 and e[0].strip()
@@ -984,7 +985,7 @@ def process_text(text):
             if not entity_tuples:
                 raise ValueError("No valid entities extracted.")
 
-            # 加载子图并执行方法三
+            # Load subgraph and execute method 3
             data_nudir, nodes_nudir, rel_num_nudir, _, _ = load_undirected_subgraph(entity_tuples, hops=2)
             gnnmodel= RGCNEncoder(in_dim=data_nudir.x.size(1), hidden_dim=256, out_dim=128, num_relations=rel_num_nudir).to(
                 device)
@@ -996,16 +997,16 @@ def process_text(text):
             result = method1_readout_subgraph(data, nodes, candidates_entities, gnn_model, hops=4)
             candidates_embeddings, candidates_nodes, _, all_reachable_info, _ = result
 
-        elif intent == "Unknown Operator":
-            #print("\n📌 处理「未知算子类别」：问题改写 + 向量检索...")
+        elif intent == "UNKNOWN OPERATOR":
+            #print("\n📌 Processing [Unknown Operator]: question rewriting + vector retrieval...")
             rewritten = rewrite_user_question(text)
-            #print("解读的用户问题:", rewritten)
+            #print("Interpreted user question:", rewritten)
             seed_entities = query_prompt_desc_collection(rewritten, top_k=30)
-            #print("检索的算子",seed_entities)
+            #print("Retrieved operators",seed_entities)
             if not seed_entities:
                 raise ValueError("No candidate operators obtained.")
 
-            # 调用新方法二（不再需要全图）
+            # Call new method 2 (full graph no longer needed)
             candidates_entities = method2_rerank_by_cross_gnn(seed_entities, rewritten, top_k=10, subgraph_hops=2)
 
             data, nodes, rel_num, triples, rel2id = load_subgraph_complete(candidates_entities, hops=2)
@@ -1024,20 +1025,20 @@ def process_text(text):
         raise RuntimeError(f"Error occurred during the graph processing stage: {str(e)}")
 
     # ========================
-    # 3️⃣ 检查候选结果
+    # 3️⃣ Check candidate results
     # ========================
     if len(candidates_nodes) == 0:
         return "No relevant operator information found; please try a more specific description."
 
-    # print("\n🔍 最终候选节点:")
+    # print("🔍 Final candidate nodes:")
     for n in candidates_nodes:
         title = n.get('Title', n.get('Name', 'DataType'))
         source = n.get('__source__', 'Unknown')
         labels = ", ".join(n.get('Labels', [])) if isinstance(n.get('Labels'), list) else n.get('Labels', 'Unknown')
-        # print(f"  - {title} (来源: {source}, 标签: {labels})")
+        # print(f"  - {title} (Source: {source}, Labels: {labels})")
 
     # ========================
-    # 4️⃣ 构建 Prompt 并生成答案
+    # 4️⃣ Build prompt and generate answer
     # ========================
     combined_prompt_parts = ["You are an expert in the GIS domain. Provide detailed and professional answers. Please answer the question based on the following candidate operators and their associated information:\n"]
 
@@ -1054,24 +1055,24 @@ def process_text(text):
 
         if reachable_info:
             info_parts.append("  Associated information:")
-            seen_generic = set()  # 普通关系去重: (rel_path, node_name)
-            seen_datatype = set()  # hasDataType 去重: (param_name,)
+            seen_generic = set()  # Deduplicate normal edges
+            seen_datatype = set()  # Deduplicate hasDataType relations
             for item in reachable_info:
                 rel_path = item["relation_path"]
                 final_node = item["final_node"]
                 path_nodes = item["path_nodes"]
 
-                # 获取终点名称和类型
+                # Get end node name and type
                 n_title = (final_node.get('Title')or final_node.get('Name')or final_node.get('DataType'))
                 n_labels = final_node.get('Labels', [])
                 n_type = n_labels[0] if isinstance(n_labels, list) and n_labels else str(n_labels)
 
-                # ✅ 特殊处理 hasDataType：显示它属于哪个参数
+                # ✅ Specially handle hasDataType: show which parameter it belongs to
                 if "hasDataType" in rel_path and len(path_nodes) >= 3:
-                    # path_nodes[-2] 是参数节点（如 INPUT_RASTER）
+                    # path_nodes[-2] is the parameter node (e.g., INPUT_RASTER)
                     param_node = path_nodes[-2]
                     param_name = param_node.get('Title', param_node.get('Name', 'UnknownParam'))
-                    # 唯一键：参数名
+                    # Unique key: parameter name
                     if param_name in seen_datatype:
                         continue
                     seen_datatype.add(param_name)
@@ -1081,13 +1082,13 @@ def process_text(text):
                         f"[{final_node.get('DataType', 'N/A')}]"
                     )
                 else:
-                    # 普通关系：按 (路径, 节点名) 去重
+                    # Normal relation: deduplicate by (path, node name)
                     unique_key = (rel_path, n_title)
                     if unique_key in seen_generic:
                         continue
                     seen_generic.add(unique_key)
 
-                    # 普通关系
+                    # Normal relation
                     extra_info = []
                     if final_node.get('Description'):
                         extra_info.append(f"Description: {final_node['Description']}")
@@ -1113,7 +1114,7 @@ def process_text(text):
         )
     final_prompt = "\n".join(combined_prompt_parts)
 
-    # 调用 LLM
+    # Call LLM
     try:
         answer = call_turing_api(final_prompt)
         if answer.startswith("Error"):
@@ -1123,12 +1124,17 @@ def process_text(text):
         return f"Error occurred while generating the answer: {str(e)}"
 
 
-# 主程序
+# Main Program
 if __name__ == '__main__':
     try:
         text = input("Please enter the text content: ")
         result = process_text(text)
         print("result:", result)
     finally:
-        weaviate_client.close()  # 确保关闭
+        weaviate_client.close()  # Ensure it is closed
         #print("✅ Weaviate connection has been closed.")
+
+
+
+
+
