@@ -2,7 +2,7 @@ import json
 import csv
 import os
 
-# 处理单个JSON文件并提取必要信息的函数
+# Process a single JSON file and extract required fields
 def process_json_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -39,39 +39,39 @@ def process_json_file(file_path):
 
     return row
 
-# JSON文件所在目录
+# Directory containing JSON files
 input_dir = 'json_datas'
 
-# 输出CSV文件
+# Output CSV file
 input_csv = 'Input.csv'
 
 rows = []
 
-# 处理目录中的所有JSON文件
+# Process all JSON files in the directory
 for file_name in os.listdir(input_dir):
     if file_name.endswith('.json'):
         file_path = os.path.join(input_dir, file_name)
         row = process_json_file(file_path)
         rows.append(row)
 
-# 找到最长的行，用于对齐CSV列
+# Find the longest row to align CSV columns
 max_len = max(len(row) for row in rows)
 
-# **🔹 重点修改部分**
+# Key adjustment
 def format_cell(value):
-    """如果值以 '-' 开头，就加上双引号"""
+    """If the value starts with '-', prefix with a tab"""
     if isinstance(value, str) and value.startswith('-'):
         return f'\t{value}'
     return value
 
-# **写入 CSV**
+# Write CSV
 with open(input_csv, 'w', newline='', encoding='utf-8') as csvfile:
-    writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)  # 只加必要的引号
+    writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)  # Add quotes only when needed
     for row in rows:
-        # **对行中每个单元格进行检查**
+        # Check each cell in the row
         formatted_row = [format_cell(cell) for cell in row]
 
-        # 补全较短的行
+        # Pad shorter rows
         if len(formatted_row) < max_len:
             formatted_row.extend([''] * (max_len - len(formatted_row)))
 

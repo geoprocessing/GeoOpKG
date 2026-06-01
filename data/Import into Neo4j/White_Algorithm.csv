@@ -1,0 +1,566 @@
+2109,Vector data management,0
+2110,Vector data management,0
+2111,Raster data management,0
+2112,Format conversion,0
+2113,Data import,0
+2114,Data export,0
+2115,Topology editing,0
+2116,Vector data attribute editing,0
+2117,Vector to raster,0
+2118,Vector data attribute editing,0
+2119,Vector overlay analysis,0
+2120,Raster data management,0
+2121,Vector data management,0
+2122,Raster data management,0
+2123,Vector to raster,0
+2124,Metadata editing,0
+2125,Vector to raster,0
+2126,Vector to raster,0
+2127,Structural transformation,1
+2128,Vector data management,0
+2129,Vector data graph editing,0
+2130,Raster data editing,0
+2131,Raster data management,0
+2132,Vector data management,0
+2133,Vector to raster,0
+2134,Vector to raster,0
+2135,Vector to raster,0
+2136,Surface analysis,0
+2137,Surface analysis,0
+2138,Vector spatial analysis,1
+2139,Visibility analysis,0
+2140,3D Surface analysis,0
+2141,Vector shape analysis,0
+2142,Surface analysis,0
+2143,Interpolation analysis,0
+2144,Vector shape analysis,0
+2145,Surface analysis,0
+2146,Surface analysis,0
+2147,Raster spatial analysis and calculation,1
+2148,Neighborhood statistics,0
+2149,Neighborhood statistics,0
+2150,Surface analysis,0
+2151,Surface analysis,0
+2152,Surface analysis,0
+2153,Surface analysis,0
+2154,Surface analysis,0
+2155,Surface analysis,0
+2156,Surface analysis,0
+2157,Surface analysis,0
+2158,Surface analysis,0
+2159,Surface analysis,0
+2160,Surface analysis,0
+2161,Distance analysis,0
+2162,Interpolation analysis,0
+2163,Surface analysis,0
+2164,Surface analysis,0
+2165,Surface analysis,0
+2166,Surface analysis,0
+2167,Surface analysis,0
+2168,Surface analysis,0
+2169,Visibility analysis,0
+2170,Visibility analysis,0
+2171,Surface analysis,0
+2172,Surface analysis,0
+2173,Visual expression,1
+2174,Surface analysis,0
+2175,Surface analysis,0
+2176,Raster shape analysis,0
+2177,Surface analysis,0
+2178,Spatial statistical analysis,1
+2179,Surface analysis,0
+2180,Raster spatial analysis and calculation,1
+2181,Surface analysis,0
+2182,Surface analysis,0
+2183,Surface analysis,0
+2184,Surface analysis,0
+2185,Surface analysis,0
+2186,Surface analysis,0
+2187,Surface analysis,0
+2188,Surface analysis,0
+2189,Surface analysis,0
+2190,Surface analysis,0
+2191,Surface analysis,0
+2192,Surface analysis,0
+2193,Surface analysis,0
+2194,Surface analysis,0
+2195,Surface analysis,0
+2196,Surface analysis,0
+2197,Surface analysis,0
+2198,Raster spatial analysis and calculation,1
+2199,Surface analysis,0
+2200,Surface analysis,0
+2201,Surface analysis,0
+2202,Surface analysis,0
+2203,Surface analysis,0
+2204,Surface analysis,0
+2205,Surface analysis,0
+2206,Surface analysis,0
+2207,Surface analysis,0
+2208,Surface analysis,0
+2209,Surface analysis,0
+2210,Surface analysis,0
+2211,Raster spatial analysis and calculation,1
+2212,Visibility analysis,0
+2213,Visibility analysis,0
+2214,Raster shape analysis,0
+2215,Visibility analysis,0
+2216,Visibility analysis,0
+2217,Surface analysis,0
+2218,Surface analysis,0
+2219,Surface analysis,0
+2220,Raster spatial analysis and calculation,1
+2221,Surface analysis,0
+2222,Surface analysis,0
+2223,Raster spatial analysis and calculation,1
+2224,Surface analysis,0
+2225,Surface analysis,0
+2226,Solar Radiation,0
+2227,Representation management,0
+2228,Representation management,0
+2229,Surface analysis,0
+2230,Surface analysis,0
+2231,Surface analysis,0
+2232,Surface analysis,0
+2233,Visibility analysis,0
+2234,Visibility analysis,0
+2235,Surface analysis,0
+2236,Raster calculation,0
+2237,Vector to raster,0
+2238,Vector to raster,0
+2239,Raster spatial analysis and calculation,1
+2240,Vector shape analysis,0
+2241,Reclassification,0
+2242,3D collection,0
+2243,Data processing,1
+2244,Raster calculation,0
+2245,Data Management and Organization,1
+2246,Vector overlay analysis,0
+2247,Vector data management,0
+2248,Vector spatial analysis,1
+2249,Data extraction,0
+2250,Vector data graph editing,0
+2251,Data extraction,0
+2252,Raster shape analysis,0
+2253,Raster spatial analysis and calculation,1
+2254,Density analysis,0
+2255,Spatial interpolation,0
+2256,Geometry,0
+2257,Central tendency analysis,0
+2258,Vector shape analysis,0
+2259,Vector shape analysis,0
+2260,Geometry,0
+2261,Vector shape analysis,0
+2262,Spatial statistical analysis,1
+2263,Interpolation analysis,0
+2264,Vector spatial analysis,1
+2265,Vector shape analysis,0
+2266,Vector shape analysis,0
+2267,Vector shape analysis,0
+2268,Interpolation analysis,0
+2269,Zonal statistics,0
+2270,Raster calculation,0
+2271,Raster shape analysis,0
+2272,Reclassification,0
+2273,Reclassification,0
+2274,Reclassification,0
+2275,Vector data graph editing,0
+2276,Vector data management,0
+2277,Spatial interpolation,0
+2278,Path analysis,0
+2279,Data driven mapping,0
+2280,Spatial interpolation,0
+2281,Change detection,0
+2282,Smoothing / Denoising filters,0
+2283,Image fusion,0
+2284,Raster data editing,0
+2285,Band arithmetic,0
+2286,Data driven mapping,0
+2287,Measuring geographic distributions,0
+2288,Raster calculation,0
+2289,Raster data editing,0
+2290,Data clipping,0
+2291,Data clipping,0
+2292,Band arithmetic,0
+2293,Spatial and neighborhood enhancement,0
+2294,Image segmentation,0
+2295,Raster data editing,0
+2296,Data processing,1
+2297,Color & Multispectral enhancement,0
+2298,Band arithmetic,0
+2299,Raster data editing,0
+2300,Spatial and neighborhood enhancement,0
+2301,Change detection,0
+2302,Data export,0
+2303,Data editing,1
+2304,Object-Oriented classification,0
+2305,Data editing,1
+2306,Data clipping,0
+2307,Color & Multispectral enhancement,0
+2308,Data editing,1
+2309,Data clipping,0
+2310,3D collection,0
+2311,3D data management,0
+2312,3D collection,0
+2313,3D data management,0
+2314,3D data management,0
+2315,3D data management,0
+2316,Raster spatial analysis and calculation,1
+2317,3D Raster calculation,0
+2318,3D data management,0
+2319,3D image analysis,0
+2320,Format conversion,0
+2321,Format conversion,0
+2322,Vector data management,0
+2323,Vector data management,0
+2324,3D data management,0
+2325,Format conversion,0
+2326,3D Raster calculation,0
+2327,3D Raster calculation,0
+2328,3D data management,0
+2329,3D data management,0
+2330,Surface analysis,0
+2331,3D Interpolation,0
+2332,3D Raster calculation,0
+2333,3D data management,0
+2334,3D collection,0
+2335,Density analysis,0
+2336,3D Surface analysis,0
+2337,Measuring geographic distributions,0
+2338,Spatial interpolation,0
+2339,3D data management,0
+2340,3D data management,0
+2341,Correlation and association,0
+2342,Vector to raster,0
+2343,Density analysis,0
+2344,3D data management,0
+2345,Raster spatial analysis and calculation,1
+2346,3D collection,0
+2347,Spatial interpolation,0
+2348,3D data management,0
+2349,3D collection,0
+2350,3D Surface analysis,0
+2351,3D collection,0
+2352,3D collection,0
+2353,3D collection,0
+2354,Spatial interpolation,0
+2355,3D collection,0
+2356,3D data management,0
+2357,3D data management,0
+2358,Vector data management,0
+2359,Raster spatial analysis and calculation,1
+2360,3D Raster calculation,0
+2361,3D data management,0
+2362,3D Surface analysis,0
+2363,3D data management,0
+2364,3D data management,0
+2365,Data extraction,0
+2366,3D data management,0
+2367,3D data management,0
+2368,Format conversion,0
+2369,Cluster and pattern analysis,0
+2370,Unsupervised classification,0
+2371,Supervised classification,0
+2372,Multispectral image analysis,0
+2373,Supervised classification,0
+2374,Unsupervised classification,0
+2375,Supervised classification,0
+2376,Deep learning-based classification,0
+2377,Deep learning-based classification,0
+2378,Spatial relationship modeling,0
+2379,Spatial relationship modeling,0
+2380,Spatial relationship modeling,0
+2381,Deep learning-based classification,0
+2382,Spatial relationship modeling,0
+2383,Raster calculation,0
+2384,Raster calculation,0
+2385,Raster calculation,0
+2386,Statistical analysis,1
+2387,Raster calculation,0
+2388,Raster calculation,0
+2389,Raster calculation,0
+2390,Raster calculation,0
+2391,Raster calculation,0
+2392,Raster calculation,0
+2393,Raster calculation,0
+2394,Correlation and association,0
+2395,Correlation and association,0
+2396,Statistics analysis,0
+2397,Measuring geographic distributions,0
+2398,Raster calculation,0
+2399,Raster calculation,0
+2400,Spatial / Stratified sampling,0
+2401,Raster calculation,0
+2402,Raster calculation,0
+2403,Cell statistics,0
+2404,Raster overlay analysis,0
+2405,Cell statistics,0
+2406,Raster calculation,0
+2407,Raster calculation,0
+2408,Raster calculation,0
+2409,Raster calculation,0
+2410,Raster calculation,0
+2411,Raster calculation,0
+2412,Raster calculation,0
+2413,Spatial autocorrelation analysis,0
+2414,Correlation and association,0
+2415,Neighborhood statistics,0
+2416,Statistical analysis,1
+2417,Raster calculation,0
+2418,Raster calculation,0
+2419,Raster calculation,0
+2420,Raster calculation,0
+2421,Raster calculation,0
+2422,Raster calculation,0
+2423,Principal component analysis (PCA),0
+2424,Raster data editing,0
+2425,Correlation and association,0
+2426,Hypothesis testing,0
+2427,Raster calculation,0
+2428,Statistics analysis,0
+2429,Raster spatial analysis and calculation,1
+2430,Raster calculation,0
+2431,Raster calculation,0
+2432,Raster calculation,0
+2433,Raster calculation,0
+2434,Raster calculation,0
+2435,Raster calculation,0
+2436,Raster calculation,0
+2437,Raster calculation,0
+2438,Raster calculation,0
+2439,Raster calculation,0
+2440,Raster calculation,0
+2441,Hypothesis testing,0
+2442,Correlation and association,0
+2443,Raster calculation,0
+2444,Neighborhood statistics,0
+2445,Reclassification,0
+2446,Neighborhood statistics,0
+2447,Spatial / Stratified sampling,0
+2448,Raster calculation,0
+2449,Statistical analysis,1
+2450,Statistical analysis,1
+2451,Raster calculation,0
+2452,Gray-level & Contrast enhancement,0
+2453,Statistical analysis,1
+2454,Raster calculation,0
+2455,Raster calculation,0
+2456,Raster calculation,0
+2457,Raster calculation,0
+2458,Raster calculation,0
+2459,Raster calculation,0
+2460,Raster calculation,0
+2461,Raster calculation,0
+2462,Raster calculation,0
+2463,Raster calculation,0
+2464,Spatial interpolation,0
+2465,Spatial statistical analysis,1
+2466,Raster calculation,0
+2467,Spatial statistical analysis,1
+2468,Hypothesis testing,0
+2469,Hypothesis testing,0
+2470,Raster calculation,0
+2471,Neighborhood statistics,0
+2472,Zonal statistics,0
+2473,Data editing,1
+2474,Vector data management,0
+2475,Vector data management,0
+2476,Statistics analysis,0
+2477,Vector overlay analysis,0
+2478,Central tendency analysis,0
+2479,Topology editing,0
+2480,Distance analysis,0
+2481,Hydrological analysis,0
+2482,Surface analysis,0
+2483,Raster spatial analysis and calculation,1
+2484,Hydrological analysis,0
+2485,Hydrological analysis,0
+2486,Hydrological analysis,0
+2487,Raster spatial analysis and calculation,1
+2488,Surface analysis,0
+2489,Surface analysis,0
+2490,Vector shape analysis,0
+2491,Structural transformation,1
+2492,Raster to vector,0
+2493,Hydrological analysis,0
+2494,Topology editing,0
+2495,Hydrological analysis,0
+2496,Hydrological analysis,0
+2497,Hydrological analysis,0
+2498,Vector spatial analysis,1
+2499,Hydrological analysis,0
+2500,Raster spatial analysis and calculation,1
+2501,Surface analysis,0
+2502,Hydrological analysis,0
+2503,Hydrological analysis,0
+2504,Vector spatial analysis,1
+2505,Cache management,0
+2506,Workspace organization,0
+2507,Cluster and pattern analysis,0
+2508,Reclassification,0
+2509,Data processing,1
+2510,Image segmentation,0
+2511,Image classification,1
+2512,Image classification,1
+2513,Proximity analysis,0
+2514,Proximity analysis,0
+2515,Proximity analysis,0
+2516,Vector spatial analysis,1
+2517,Proximity analysis,0
+2518,Distance analysis,0
+2519,Smoothing / Denoising filters,0
+2520,Smoothing / Denoising filters,0
+2521,Edge detection filters,0
+2522,Smoothing / Denoising filters,0
+2523,Image filtering / edge detection,1
+2524,Edge detection filters,0
+2525,Neighborhood statistics,0
+2526,Smoothing / Denoising filters,0
+2527,Sharpening filters,0
+2528,Image filtering / edge detection,1
+2529,Smoothing / Denoising filters,0
+2530,Image filtering / edge detection,1
+2531,Sharpening filters,0
+2532,Sharpening filters,0
+2533,Smoothing / Denoising filters,0
+2534,Edge detection filters,0
+2535,Edge detection filters,0
+2536,Smoothing / Denoising filters,0
+2537,Edge detection filters,0
+2538,Smoothing / Denoising filters,0
+2539,Neighborhood statistics,0
+2540,Smoothing / Denoising filters,0
+2541,Smoothing / Denoising filters,0
+2542,Smoothing / Denoising filters,0
+2543,Smoothing / Denoising filters,0
+2544,Neighborhood statistics,0
+2545,Edge detection filters,0
+2546,Neighborhood statistics,0
+2547,Edge detection filters,0
+2548,Edge detection filters,0
+2549,Edge detection filters,0
+2550,Neighborhood statistics,0
+2551,Raster calculation,0
+2552,Sharpening filters,0
+2553,Directional / Oriented filters,0
+2554,Surface analysis,0
+2555,Raster spatial analysis and calculation,1
+2556,Hydrological analysis,0
+2557,Surface analysis,0
+2558,Hydrological analysis,0
+2559,Surface analysis,0
+2560,Data editing,1
+2561,Hydrological analysis,0
+2562,Hydrological analysis,0
+2563,Hydrological analysis,0
+2564,Cache management,0
+2565,Hydrological analysis,0
+2566,Hydrological analysis,0
+2567,Surface analysis,0
+2568,Surface analysis,0
+2569,Hydrological analysis,0
+2570,Distance analysis,0
+2571,Hydrological analysis,0
+2572,Hydrological analysis,0
+2573,Surface analysis,0
+2574,Surface analysis,0
+2575,Hydrological analysis,0
+2576,Hydrological analysis,0
+2577,Hydrological analysis,0
+2578,Surface analysis,0
+2579,Surface analysis,0
+2580,Surface analysis,0
+2581,Surface analysis,0
+2582,Surface analysis,0
+2583,Hydrological analysis,0
+2584,Surface analysis,0
+2585,Surface analysis,0
+2586,Hydrological analysis,0
+2587,Surface analysis,0
+2588,Hydrological analysis,0
+2589,Hydrological analysis,0
+2590,Surface analysis,0
+2591,3D Surface analysis,0
+2592,Hydrological analysis,0
+2593,Proximity analysis,0
+2594,Hydrological analysis,0
+2595,Vector spatial analysis,1
+2596,Surface analysis,0
+2597,Surface analysis,0
+2598,Hydrological analysis,0
+2599,Hydrological analysis,0
+2600,Hydrological analysis,0
+2601,Surface analysis,0
+2602,3D Raster calculation,0
+2603,Hydrological analysis,0
+2604,Surface analysis,0
+2605,Cache management,0
+2606,Vector spatial analysis,1
+2607,Surface analysis,0
+2608,Proximity analysis,0
+2609,Hydrological analysis,0
+2610,Hydrological analysis,0
+2611,Hydrological analysis,0
+2612,Vector data management,0
+2613,Hydrological analysis,0
+2614,Hydrological analysis,0
+2615,Hydrological analysis,0
+2616,Hydrological analysis,0
+2617,Color & Multispectral enhancement,0
+2618,Radiometric correction,0
+2619,Adaptive and learning-based enhancement,0
+2620,Gray-level & Contrast enhancement,0
+2621,Gray-level & Contrast enhancement,0
+2622,Gray-level & Contrast enhancement,0
+2623,Gray-level & Contrast enhancement,0
+2624,Gray-level & Contrast enhancement,0
+2625,Gray-level & Contrast enhancement,0
+2626,Image fusion,0
+2627,Gray-level & Contrast enhancement,0
+2628,Gray-level & Contrast enhancement,0
+2629,Gray-level & Contrast enhancement,0
+2630,Gray-level & Contrast enhancement,0
+2631,Raster calculation,0
+2632,Vector overlay analysis,0
+2633,Data clipping,0
+2634,Raster calculation,0
+2635,Vector overlay analysis,0
+2636,Vector overlay analysis,0
+2637,Raster spatial analysis and calculation,1
+2638,Raster calculation,0
+2639,Vector overlay analysis,0
+2640,Vector overlay analysis,0
+2641,Raster calculation,0
+2642,Raster calculation,0
+2643,Raster calculation,0
+2644,Vector data management,0
+2645,Raster calculation,0
+2646,Raster calculation,0
+2647,Raster calculation,0
+2648,Raster calculation,0
+2649,Raster calculation,0
+2650,Raster calculation,0
+2651,Raster calculation,0
+2652,Vector overlay analysis,0
+2653,Vector overlay analysis,0
+2654,Raster calculation,0
+2655,Vector overlay analysis,0
+2656,Vector overlay analysis,0
+2657,Raster spatial analysis and calculation,1
+2658,Raster spatial analysis and calculation,1
+2659,Raster overlay analysis,0
+2660,Raster shape analysis,0
+2661,Vector shape analysis,0
+2662,Vector shape analysis,0
+2663,Raster shape analysis,0
+2664,Vector shape analysis,0
+2665,Raster spatial analysis and calculation,1
+2666,Vector shape analysis,0
+2667,Vector shape analysis,0
+2668,Raster shape analysis,0
+2669,Vector shape analysis,0
+2670,Vector shape analysis,0
+2671,Raster spatial analysis and calculation,1
+2672,Vector shape analysis,0
+2673,Vector shape analysis,0
+2674,Raster shape analysis,0

@@ -2,15 +2,15 @@ import pandas as pd
 from py2neo import Graph, Node, Relationship
 
 # Connect to Neo4j database
-graph = Graph('bolt://localhost:7687', auth=('neo4j', 'Yq123456'))
+graph = Graph('bolt://localhost:7687', auth=('neo4j', ''))
 
-# Read CSV file without header
+# Read CSV file, without header
 df = pd.read_csv("ArcGIS_Algorithm.csv", header=None, encoding="utf-8")
 
-# Iterate through each row of the DataFrame and create relationships
+# Iterate through each row of DataFrame to create relationships
 for index, row in df.iterrows():
-    operator_id = str(row[0])  # Assume operator ID is in the first column
-    algorithm_name = row[1]    # Assume algorithm name is in the second column
+    operator_id = str(row[0])  # Assume Operator ID is in the first column
+    algorithm_name = row[1]    # Assume Algorithm name is in the second column
 
     # Find Operator node
     operator_query = f"MATCH (o:Operation) WHERE o.ID = {operator_id} RETURN o"
@@ -26,7 +26,7 @@ for index, row in df.iterrows():
         print(f"No matching Algorithm node found for Name: {algorithm_name}")
 
     if operator_node and algorithm_node:
-        # Create relationship between Operator and Algorithm nodes
+        # Create relationship between Operator node and Algorithm node
         has_plan_relationship = Relationship(operator_node, "hasPlan", algorithm_node)
         graph.create(has_plan_relationship)
     else:
