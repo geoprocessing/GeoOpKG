@@ -1,19 +1,19 @@
 from neo4j import GraphDatabase
 import pandas as pd
 
-# Set Neo4j connection info
+# Connect to database
 uri = "bolt://localhost:7687"
-username = ""
+username = "neo4j"
 password = ""
 driver = GraphDatabase.driver(uri, auth=(username, password))
 
 def create_hierarchy(tx, row):
-    # Extract all columns (assumed names A, B, C, D, E, F, G, H, I, J)
+    # Extract all columns (assuming column names A, B, C, D, E, F, G, H, I, J)
     A, B, C = row[0], row[1], row[2]
     D, E, F = row[3], row[4], row[5]
     G, H, I, J = row[6], row[7], row[8], row[9]
 
-    # Store valid Algorithm node info (name, description)
+    # Store valid Algorithm node information (name, description)
     algos = []
     if pd.notna(A) and A.strip():
         algos.append(('A', A.strip(), D.strip() if pd.notna(D) else ""))
@@ -33,7 +33,7 @@ def create_hierarchy(tx, row):
             END
         """, name=name, desc=desc)
 
-    # Build PartOf hierarchy: B -> A, C -> B
+    # Establish PartOf hierarchy relationship: B -> A, C -> B
     if pd.notna(B) and B.strip() and pd.notna(A) and A.strip():
         tx.run("""
             MERGE (child:Algorithm {Name: $child}) 
@@ -48,17 +48,17 @@ def create_hierarchy(tx, row):
             MERGE (child)-[:PartOf]->(parent)
         """, child=C.strip(), parent=B.strip())
 
-    # Process inputs/outputs only when the corresponding Algorithm exists
+    # Process input/output: only when corresponding Algorithm exists
     inputs_outputs = []
 
-    # Subclass 1 input/output (bind to B)
+    # Input and output of Subclass 1 (bind to B)
     if pd.notna(B) and B.strip():
         if pd.notna(G) and G.strip():
             inputs_outputs.append(('input', G.strip(), B.strip()))
         if pd.notna(H) and H.strip():
             inputs_outputs.append(('output', H.strip(), B.strip()))
 
-    # Subclass 2 input/output (bind to C)
+    # Input and output of Subclass 2 (bind to C)
     if pd.notna(C) and C.strip():
         if pd.notna(I) and I.strip():
             inputs_outputs.append(('input', I.strip(), C.strip()))
@@ -82,10 +82,10 @@ def create_hierarchy(tx, row):
             """, title=title, alg_name=alg_name)
 
 # Read data
-df = pd.read_csv("Algorithm.csv", encoding='gbk')  # Or Excel
-df = df.fillna('')  # Convert NaN to ''
+df = pd.read_csv("category.csv", encoding='gbk')  # 或 Excel
+df = df.fillna('')  # 转换 NaN 为 ''
 
-# Execute writes
+# Execute writing
 with driver.session() as session:
     for _, row in df.iterrows():
         session.execute_write(create_hierarchy, row)

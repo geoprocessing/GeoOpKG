@@ -1,13 +1,13 @@
 import pandas as pd
 from py2neo import Graph, Node, Relationship
 
-# Set Neo4j connection info
-graph = Graph("bolt://localhost:7687", auth=("", ""))
+# Connect to Neo4j database
+graph = Graph("bolt://localhost:7687", auth=("neo4j", ""))
 
 # Read CSV file (no header)
-data = pd.read_csv('ArcGIS_Output.csv', encoding="GBK", header=None)
+data = pd.read_csv('Catalyst_Output.csv', encoding="GBK", header=None)
 
-# Iterate over each row
+# Iterate through each row of data
 for index, row in data.iterrows():
     # Find Operator node using fixed index
     operator_id = row[0]
@@ -16,7 +16,7 @@ for index, row in data.iterrows():
         print(f"Operator with ID {operator_id} not found.")
         continue
 
-    # Check if there is enough data to create GenericOutput nodes
+    # Check if there is enough data to create GenericOutput node
     if len(row) < 3:
         print(f"Insufficient data in row {index} to create GenericOutput nodes.")
         continue
@@ -36,9 +36,9 @@ for index, row in data.iterrows():
                 has_output_relationship = Relationship(operator_node, "hasOutput", output_node)
                 graph.create(has_output_relationship)
 
-            # Process the last two columns
-            type_value = row[i + 2]
-            data_type = row[i + 3]
+            # Process the last two columns of data
+            type_value = row[i + 3]
+            data_type = row[i + 2]
             labels = ["ComplexData"]
 
             if type_value == "Vector":
